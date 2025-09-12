@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Análisis de Modelos de Calidad en Aplicaciones Web</title>
+    <title>Análisis de Calidad de Rappi - Modelos McCall, Boehm y FURPS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <h1>Análisis de la Aplicación de Modelos de Calidad</h1>
-        <p>Actividad Académica - Evaluación de una Página Web</p>
+        <p>Actividad Académica - Evaluación de Rappi</p>
     </header>
 
     <nav>
@@ -25,59 +25,57 @@
     <main>
         <section id="presentacion">
             <h2>Presentación de la Actividad</h2>
-            <p>Esta actividad académica tiene como objetivo analizar la aplicación de modelos de calidad en una página web específica. Seleccionaremos una red social o sitio web y aplicaremos los modelos de calidad McCall, Boehm y FURPS utilizando plantillas de evaluación con cuestionarios y escalas valorativas.</p>
-            <p><strong>Red seleccionada:</strong> [Indique aquí la red o sitio web a analizar, ej. Facebook, Twitter, etc.]</p>
+            <p>Esta actividad académica tiene como objetivo analizar la aplicación de modelos de calidad en Rappi, una plataforma web de comercio electrónico que permite a los usuarios realizar pedidos de restaurantes, supermercados, farmacias y otros servicios, con integración de pagos en línea, geolocalización y seguimiento de pedidos en tiempo real.</p>
+            <p><strong>Software a evaluar:</strong> Rappi</p>
+            <p><strong>Repositorio:</strong> Rappi es una aplicación comercial privada disponible en App Store (iOS), Google Play (Android) y en la versión web oficial https://www.rappi.com</p>
+            <p><strong>Área de aplicación:</strong> Comercio electrónico y logística de entregas a domicilio</p>
+            <p><strong>Link de acceso:</strong> <a href="https://www.rappi.com.co" target="_blank">https://www.rappi.com.co</a></p>
         </section>
 
         <section id="modelos">
             <h2>Descripción de los Modelos Utilizados</h2>
             <article id="mccall">
                 <h3>Modelo McCall</h3>
-                <p>El modelo de calidad de McCall se centra en factores de calidad que afectan la operación, revisión y transición del software. Incluye factores como:</p>
+                <p>Presentado en 1977 y propone una serie de factores de calidad conocidos como factores de McCall, Richards, & Walters (1977), la idea del modelo es la descomposición del concepto genérico de calidad en tres capacidades importantes para un producto software: operación, transición y revisión desde la mirada del usuario.</p>
+                <p>Los factores principales son:</p>
                 <ul>
-                    <li>Correctitud</li>
-                    <li>Fiabilidad</li>
-                    <li>Eficiencia</li>
-                    <li>Integridad</li>
-                    <li>Usabilidad</li>
-                    <li>Mantenibilidad</li>
-                    <li>Flexibilidad</li>
-                    <li>Portabilidad</li>
-                    <li>Reusabilidad</li>
-                    <li>Interoperabilidad</li>
+                    <li><strong>Operación (40%):</strong> Correctitud, Fiabilidad, Eficiencia, Usabilidad, Integridad/Seguridad</li>
+                    <li><strong>Transición (30%):</strong> Portabilidad, Reusabilidad, Interoperabilidad</li>
+                    <li><strong>Revisión (30%):</strong> Facilidad Mantenimiento, Flexibilidad, Facilidad de Prueba</li>
                 </ul>
             </article>
             <article id="boehm">
                 <h3>Modelo Boehm</h3>
-                <p>El modelo de calidad de Boehm enfatiza la utilidad del software y su capacidad para ser mantenido y portado. Los factores principales son:</p>
+                <p>Presentado por Barry Boehm en 1978, introduce características de alto nivel, características de nivel intermedio y características primitivas, cada una de las cuales contribuye al nivel general de calidad.</p>
+                <p>Las características principales son:</p>
                 <ul>
-                    <li>Utilidad</li>
-                    <li>Mantenibilidad</li>
-                    <li>Portabilidad</li>
+                    <li><strong>Utilidad General (70%):</strong> Fiabilidad, Eficiencia, Interactividad</li>
+                    <li><strong>Mantenibilidad (20%):</strong> Facilidad de Prueba, Facilidad de Entendimiento, Modificabilidad</li>
+                    <li><strong>Portabilidad (10%):</strong> Independencia de Dispositivos, Auto-contención</li>
                 </ul>
             </article>
             <article id="furps">
                 <h3>Modelo FURPS</h3>
-                <p>FURPS es un acrónimo que representa los aspectos clave de calidad: Funcionalidad, Usabilidad, Fiabilidad, Rendimiento y Soporte. Es útil para evaluar tanto requisitos funcionales como no funcionales.</p>
+                <p>Robert Grady y Hewlett Packard (HP) en 1987, desarrollaron el modelo de calidad FURPS, el cual se emplea diferentes factores de calidad de software, identificando 5 características de los cuales se deriva su nombre: Functionality, Usability, Reliability, Performance, Supportability (Funcionalidad, Facilidad de Uso, Fiabilidad, Rendimiento, Soporte).</p>
+                <p>Los factores principales son:</p>
                 <ul>
-                    <li><strong>Funcionalidad (Functionality):</strong> Capacidad del sistema para realizar las funciones requeridas</li>
-                    <li><strong>Usabilidad (Usability):</strong> Facilidad de uso del sistema</li>
-                    <li><strong>Fiabilidad (Reliability):</strong> Capacidad para mantener su rendimiento bajo condiciones normales</li>
-                    <li><strong>Rendimiento (Performance):</strong> Eficiencia en el uso de recursos</li>
-                    <li><strong>Soporte (Supportability):</strong> Facilidad para ser modificado, probado y mantenido</li>
+                    <li><strong>Funcionalidad (30%):</strong> Características y capacidades del programa, Generalidad de las funciones, Seguridad del Sistema</li>
+                    <li><strong>Usabilidad (20%):</strong> Capacidad de Prueba, Capacidad de configuración, Compatibilidad, Requisitos de instalación</li>
+                    <li><strong>Fiabilidad (15%):</strong> Frecuencia y severidad de fallos, Exactitud de las salidas, Capacidad de predicción</li>
+                    <li><strong>Rendimiento (20%):</strong> Factores Humanos, Factores Estéticos, Consistencia de la interfaz, Documentación</li>
+                    <li><strong>Soporte (15%):</strong> Velocidad de procesamiento, Tiempo de respuesta, Consumo de recursos, Rendimiento efectivo total, Eficacia</li>
                 </ul>
             </article>
         </section>
 
         <section id="evaluacion">
             <h2>Aplicación de las Plantillas de Evaluación</h2>
-            <p>Aquí se aplicarán las plantillas de evaluación para cada modelo. Utilizaremos una escala valorativa del 1 al 5, donde:</p>
+            <p>Aquí se aplicarán las plantillas de evaluación para cada modelo. Utilizaremos una escala valorativa del 1 al 4, donde:</p>
             <ul>
-                <li>1 = Muy deficiente</li>
-                <li>2 = Deficiente</li>
-                <li>3 = Aceptable</li>
-                <li>4 = Bueno</li>
-                <li>5 = Excelente</li>
+                <li>1 = Malo</li>
+                <li>2 = Regular</li>
+                <li>3 = Bueno</li>
+                <li>4 = Excelente</li>
             </ul>
             <button id="calcular-btn" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Calcular Resultados</button>
 
@@ -90,7 +88,6 @@
                     <label><input type="radio" name="mccall-correctitud" value="2">2</label>
                     <label><input type="radio" name="mccall-correctitud" value="3">3</label>
                     <label><input type="radio" name="mccall-correctitud" value="4">4</label>
-                    <label><input type="radio" name="mccall-correctitud" value="5">5</label>
 
                     <h4>Fiabilidad</h4>
                     <p>¿El sitio web es confiable y consistente en su funcionamiento?</p>
@@ -98,7 +95,6 @@
                     <label><input type="radio" name="mccall-fiabilidad" value="2">2</label>
                     <label><input type="radio" name="mccall-fiabilidad" value="3">3</label>
                     <label><input type="radio" name="mccall-fiabilidad" value="4">4</label>
-                    <label><input type="radio" name="mccall-fiabilidad" value="5">5</label>
 
                     <h4>Eficiencia</h4>
                     <p>¿El sitio web utiliza recursos de manera eficiente?</p>
@@ -106,7 +102,6 @@
                     <label><input type="radio" name="mccall-eficiencia" value="2">2</label>
                     <label><input type="radio" name="mccall-eficiencia" value="3">3</label>
                     <label><input type="radio" name="mccall-eficiencia" value="4">4</label>
-                    <label><input type="radio" name="mccall-eficiencia" value="5">5</label>
 
                     <h4>Usabilidad</h4>
                     <p>¿El sitio web es fácil de usar y entender?</p>
@@ -114,7 +109,6 @@
                     <label><input type="radio" name="mccall-usabilidad" value="2">2</label>
                     <label><input type="radio" name="mccall-usabilidad" value="3">3</label>
                     <label><input type="radio" name="mccall-usabilidad" value="4">4</label>
-                    <label><input type="radio" name="mccall-usabilidad" value="5">5</label>
 
                     <h4>Mantenibilidad</h4>
                     <p>¿El sitio web es fácil de mantener y actualizar?</p>
@@ -122,7 +116,6 @@
                     <label><input type="radio" name="mccall-mantenibilidad" value="2">2</label>
                     <label><input type="radio" name="mccall-mantenibilidad" value="3">3</label>
                     <label><input type="radio" name="mccall-mantenibilidad" value="4">4</label>
-                    <label><input type="radio" name="mccall-mantenibilidad" value="5">5</label>
                 </form>
             </article>
 
@@ -135,7 +128,6 @@
                     <label><input type="radio" name="boehm-utilidad" value="2">2</label>
                     <label><input type="radio" name="boehm-utilidad" value="3">3</label>
                     <label><input type="radio" name="boehm-utilidad" value="4">4</label>
-                    <label><input type="radio" name="boehm-utilidad" value="5">5</label>
 
                     <h4>Mantenibilidad</h4>
                     <p>¿Es fácil modificar y actualizar el sitio web?</p>
@@ -143,7 +135,6 @@
                     <label><input type="radio" name="boehm-mantenibilidad" value="2">2</label>
                     <label><input type="radio" name="boehm-mantenibilidad" value="3">3</label>
                     <label><input type="radio" name="boehm-mantenibilidad" value="4">4</label>
-                    <label><input type="radio" name="boehm-mantenibilidad" value="5">5</label>
 
                     <h4>Portabilidad</h4>
                     <p>¿El sitio web puede adaptarse fácilmente a diferentes entornos?</p>
@@ -151,7 +142,6 @@
                     <label><input type="radio" name="boehm-portabilidad" value="2">2</label>
                     <label><input type="radio" name="boehm-portabilidad" value="3">3</label>
                     <label><input type="radio" name="boehm-portabilidad" value="4">4</label>
-                    <label><input type="radio" name="boehm-portabilidad" value="5">5</label>
                 </form>
             </article>
 
@@ -164,7 +154,6 @@
                     <label><input type="radio" name="furps-funcionalidad" value="2">2</label>
                     <label><input type="radio" name="furps-funcionalidad" value="3">3</label>
                     <label><input type="radio" name="furps-funcionalidad" value="4">4</label>
-                    <label><input type="radio" name="furps-funcionalidad" value="5">5</label>
 
                     <h4>Usabilidad</h4>
                     <p>¿El sitio web es intuitivo y fácil de navegar?</p>
@@ -172,7 +161,6 @@
                     <label><input type="radio" name="furps-usabilidad" value="2">2</label>
                     <label><input type="radio" name="furps-usabilidad" value="3">3</label>
                     <label><input type="radio" name="furps-usabilidad" value="4">4</label>
-                    <label><input type="radio" name="furps-usabilidad" value="5">5</label>
 
                     <h4>Fiabilidad</h4>
                     <p>¿El sitio web funciona de manera consistente sin errores frecuentes?</p>
@@ -180,7 +168,6 @@
                     <label><input type="radio" name="furps-fiabilidad" value="2">2</label>
                     <label><input type="radio" name="furps-fiabilidad" value="3">3</label>
                     <label><input type="radio" name="furps-fiabilidad" value="4">4</label>
-                    <label><input type="radio" name="furps-fiabilidad" value="5">5</label>
 
                     <h4>Rendimiento</h4>
                     <p>¿El sitio web carga rápidamente y responde de manera eficiente?</p>
@@ -188,7 +175,6 @@
                     <label><input type="radio" name="furps-rendimiento" value="2">2</label>
                     <label><input type="radio" name="furps-rendimiento" value="3">3</label>
                     <label><input type="radio" name="furps-rendimiento" value="4">4</label>
-                    <label><input type="radio" name="furps-rendimiento" value="5">5</label>
 
                     <h4>Soporte</h4>
                     <p>¿El sitio web es fácil de mantener y actualizar?</p>
@@ -196,7 +182,6 @@
                     <label><input type="radio" name="furps-soporte" value="2">2</label>
                     <label><input type="radio" name="furps-soporte" value="3">3</label>
                     <label><input type="radio" name="furps-soporte" value="4">4</label>
-                    <label><input type="radio" name="furps-soporte" value="5">5</label>
                 </form>
             </article>
         </section>
