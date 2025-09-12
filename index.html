@@ -81,108 +81,1054 @@
 
             <article id="plantilla-mccall">
                 <h3>Plantilla McCall</h3>
-                <form id="form-mccall">
-                    <h4>Correctitud</h4>
-                    <p>¿El sitio web produce resultados correctos y precisos?</p>
-                    <label><input type="radio" name="mccall-correctitud" value="1">1</label>
-                    <label><input type="radio" name="mccall-correctitud" value="2">2</label>
-                    <label><input type="radio" name="mccall-correctitud" value="3">3</label>
-                    <label><input type="radio" name="mccall-correctitud" value="4">4</label>
+                <p>Presentado en 1977 por McCall, Richards & Walters, descompone la calidad en tres capacidades: Operación (40%), Transición (30%) y Revisión (30%).</p>
 
-                    <h4>Fiabilidad</h4>
-                    <p>¿El sitio web es confiable y consistente en su funcionamiento?</p>
-                    <label><input type="radio" name="mccall-fiabilidad" value="1">1</label>
-                    <label><input type="radio" name="mccall-fiabilidad" value="2">2</label>
-                    <label><input type="radio" name="mccall-fiabilidad" value="3">3</label>
-                    <label><input type="radio" name="mccall-fiabilidad" value="4">4</label>
+                <h4>Cuestionario de Evaluación</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">MÉTRICAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">DESCRIPCIÓN</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PREGUNTAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE ESPERADO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE OBTENIDO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Compleción de las funciones</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Grado en que se pudieron implementar las funciones requeridas.</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Ofrece Rappi todas las funciones prometidas (pedidos, pagos, seguimiento)?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="completitud">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Complejidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Complejidad del sistema</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Es complejo de usar para usuarios nuevos?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="revision" data-metrica="complejidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Concisión</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Efectividad del recurso</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Utiliza eficientemente los recursos del dispositivo?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="concision">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consistencia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Diseño uniforme del programa empleando técnicas de documentación.</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Mantiene consistencia en el diseño y navegación?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="consistencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Eficiencia de ejecución</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento en tiempo de ejecución</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Es eficiente en tiempos de carga y respuesta?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="eficiencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Seguridad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Disponibilidad de elementos de protección del recurso y la información.</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Protege adecuadamente los datos de los usuarios?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="seguridad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Simplicidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Grado de dificultad para entender el recurso</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Es fácil de entender y usar?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="simplicidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Independencia del software</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Grado de independencia del software en relación al sistema operativo.</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Funciona en diferentes plataformas y dispositivos?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="transicion" data-metrica="independencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Modularidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Independencia funcional de los componentes.</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Los componentes están bien modularizados?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="revision" data-metrica="modularidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <h4>Eficiencia</h4>
-                    <p>¿El sitio web utiliza recursos de manera eficiente?</p>
-                    <label><input type="radio" name="mccall-eficiencia" value="1">1</label>
-                    <label><input type="radio" name="mccall-eficiencia" value="2">2</label>
-                    <label><input type="radio" name="mccall-eficiencia" value="3">3</label>
-                    <label><input type="radio" name="mccall-eficiencia" value="4">4</label>
-
-                    <h4>Usabilidad</h4>
-                    <p>¿El sitio web es fácil de usar y entender?</p>
-                    <label><input type="radio" name="mccall-usabilidad" value="1">1</label>
-                    <label><input type="radio" name="mccall-usabilidad" value="2">2</label>
-                    <label><input type="radio" name="mccall-usabilidad" value="3">3</label>
-                    <label><input type="radio" name="mccall-usabilidad" value="4">4</label>
-
-                    <h4>Mantenibilidad</h4>
-                    <p>¿El sitio web es fácil de mantener y actualizar?</p>
-                    <label><input type="radio" name="mccall-mantenibilidad" value="1">1</label>
-                    <label><input type="radio" name="mccall-mantenibilidad" value="2">2</label>
-                    <label><input type="radio" name="mccall-mantenibilidad" value="3">3</label>
-                    <label><input type="radio" name="mccall-mantenibilidad" value="4">4</label>
-                </form>
+                <h4>Consolidación de Puntajes</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #e8f4f8;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">CAPACIDAD</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">FACTOR</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="10">MÉTRICAS</th>
+                        </tr>
+                        <tr style="background-color: #e8f4f8;">
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Compleción</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Complejidad</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Concisión</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Consistencia</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Eficiencia</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Seguridad</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Simplicidad</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Independencia</th>
+                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Modularidad</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PROMEDIO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">OPERACIÓN</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">40</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Corrección</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-completitud">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-concision">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-consistencia">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-eficiencia">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-seguridad">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-simplicidad">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-correccion">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Confiabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-completitud-conf">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-confiabilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Usabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-consistencia-usab">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-simplicidad-usab">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-usabilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Integridad o Seguridad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-seguridad-int">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-integridad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">TRANSICIÓN</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Portabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-independencia-port">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-portabilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Reusabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-reusabilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Interoperabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-interoperabilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">REVISIÓN</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">30</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Facilidad Mantenimiento</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-complejidad-mant">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-modularidad-mant">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-mantenimiento">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Flexibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-flexibilidad">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Facilidad de Prueba</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-prueba">0</td>
+                        </tr>
+                    </tbody>
+                </table>
             </article>
 
             <article id="plantilla-boehm">
                 <h3>Plantilla Boehm</h3>
-                <form id="form-boehm">
-                    <h4>Utilidad</h4>
-                    <p>¿El sitio web satisface las necesidades del usuario?</p>
-                    <label><input type="radio" name="boehm-utilidad" value="1">1</label>
-                    <label><input type="radio" name="boehm-utilidad" value="2">2</label>
-                    <label><input type="radio" name="boehm-utilidad" value="3">3</label>
-                    <label><input type="radio" name="boehm-utilidad" value="4">4</label>
+                <p>Presentado por Barry Boehm en 1978, introduce características de alto nivel, características de nivel intermedio y características primitivas.</p>
 
-                    <h4>Mantenibilidad</h4>
-                    <p>¿Es fácil modificar y actualizar el sitio web?</p>
-                    <label><input type="radio" name="boehm-mantenibilidad" value="1">1</label>
-                    <label><input type="radio" name="boehm-mantenibilidad" value="2">2</label>
-                    <label><input type="radio" name="boehm-mantenibilidad" value="3">3</label>
-                    <label><input type="radio" name="boehm-mantenibilidad" value="4">4</label>
+                <h4>Descripción de las características primitivas y cuestionario</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CARACTERÍSTICAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">PREGUNTAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE ESPERADO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE OBTENIDO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD GENERAL - PORTABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Independencia de Dispositivos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="alto" data-caracteristica="portabilidad" data-primitiva="independencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Auto-contención</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="alto" data-caracteristica="portabilidad" data-primitiva="autocontencion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - FIABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Precisión</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">40</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="precision">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Completitud</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="completitud">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Robustez</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="robustez">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consistencia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="consistencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - EFICIENCIA</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Responsabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="responsabilidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Eficiencia de dispositivos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="eficiencia-dispositivos">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Accesibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="accesibilidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - INTERACTIVIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Robustez</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">15</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="robustez-int">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Accesibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="accesibilidad-int">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de comunicación</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="comunicacion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - FACILIDAD DE PRUEBA</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Auto descripción</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-prueba" data-primitiva="auto-descripcion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Estructuración</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-prueba" data-primitiva="estructuracion-prueba">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - FACILIDAD DE ENTENDIMIENTO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Concisión</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-entendimiento" data-primitiva="concision">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Legibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-entendimiento" data-primitiva="legibilidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - MODIFICABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Estructuración</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="modificabilidad" data-primitiva="estructuracion-mod">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Escalabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="modificabilidad" data-primitiva="escalabilidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <h4>Portabilidad</h4>
-                    <p>¿El sitio web puede adaptarse fácilmente a diferentes entornos?</p>
-                    <label><input type="radio" name="boehm-portabilidad" value="1">1</label>
-                    <label><input type="radio" name="boehm-portabilidad" value="2">2</label>
-                    <label><input type="radio" name="boehm-portabilidad" value="3">3</label>
-                    <label><input type="radio" name="boehm-portabilidad" value="4">4</label>
-                </form>
+                <h4>Puntuación Obtenida</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #e8f4f8;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">CARACTERÍSTICAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE ESPERADO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE OBTENIDO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PROMEDIO NIVEL</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE NIVEL</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PROMEDIO TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD GENERAL</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">70</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-general">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">PORTABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad-promedio">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad-puntaje">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">UTILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">70</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-promedio">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-puntaje">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">MANTENIBILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">20</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad-promedio">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad-puntaje">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="boehm-total">0</td>
+                        </tr>
+                    </tbody>
+                </table>
             </article>
 
             <article id="plantilla-furps">
                 <h3>Plantilla FURPS</h3>
-                <form id="form-furps">
-                    <h4>Funcionalidad</h4>
-                    <p>¿El sitio web incluye todas las funciones requeridas?</p>
-                    <label><input type="radio" name="furps-funcionalidad" value="1">1</label>
-                    <label><input type="radio" name="furps-funcionalidad" value="2">2</label>
-                    <label><input type="radio" name="furps-funcionalidad" value="3">3</label>
-                    <label><input type="radio" name="furps-funcionalidad" value="4">4</label>
+                <p>Desarrollado por Robert Grady y Hewlett Packard en 1987, emplea diferentes factores de calidad: Functionality, Usability, Reliability, Performance, Supportability.</p>
 
-                    <h4>Usabilidad</h4>
-                    <p>¿El sitio web es intuitivo y fácil de navegar?</p>
-                    <label><input type="radio" name="furps-usabilidad" value="1">1</label>
-                    <label><input type="radio" name="furps-usabilidad" value="2">2</label>
-                    <label><input type="radio" name="furps-usabilidad" value="3">3</label>
-                    <label><input type="radio" name="furps-usabilidad" value="4">4</label>
+                <h4>Aplicación de la evaluación al software</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #f2f2f2;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CARACTERÍSTICAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">FACTOR</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">VALORACIÓN</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">F<br/>FUNCIONALIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Características y capacidades del programa</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="funcionalidad" data-factor="caracteristicas">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Generalidad de las funciones</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="funcionalidad" data-factor="generalidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Seguridad del Sistema</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="funcionalidad" data-factor="seguridad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">U<br/>FACILIDAD DE USO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de Prueba</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="usabilidad" data-factor="capacidad-prueba">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de configuración</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="usabilidad" data-factor="configuracion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Compatibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="usabilidad" data-factor="compatibilidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Requisitos de instalación</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="usabilidad" data-factor="instalacion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">R<br/>CONFIABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Frecuencia y severidad de fallos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="fiabilidad" data-factor="fallos">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Exactitud de las salidas</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="fiabilidad" data-factor="exactitud">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de predicción</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="fiabilidad" data-factor="prediccion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">P<br/>RENDIMIENTO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Factores Humanos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="rendimiento" data-factor="humanos">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Factores Estéticos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="rendimiento" data-factor="esteticos">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consistencia de la interfaz</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="rendimiento" data-factor="consistencia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Documentación</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="rendimiento" data-factor="documentacion">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="5">S<br/>SOPORTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Velocidad de procesamiento</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="soporte" data-factor="velocidad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Tiempo de respuesta</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="soporte" data-factor="respuesta">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consumo de recursos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="soporte" data-factor="recursos">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento efectivo total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="soporte" data-factor="efectivo">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Eficacia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-furps" data-caracteristica="soporte" data-factor="eficacia">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
 
-                    <h4>Fiabilidad</h4>
-                    <p>¿El sitio web funciona de manera consistente sin errores frecuentes?</p>
-                    <label><input type="radio" name="furps-fiabilidad" value="1">1</label>
-                    <label><input type="radio" name="furps-fiabilidad" value="2">2</label>
-                    <label><input type="radio" name="furps-fiabilidad" value="3">3</label>
-                    <label><input type="radio" name="furps-fiabilidad" value="4">4</label>
-
-                    <h4>Rendimiento</h4>
-                    <p>¿El sitio web carga rápidamente y responde de manera eficiente?</p>
-                    <label><input type="radio" name="furps-rendimiento" value="1">1</label>
-                    <label><input type="radio" name="furps-rendimiento" value="2">2</label>
-                    <label><input type="radio" name="furps-rendimiento" value="3">3</label>
-                    <label><input type="radio" name="furps-rendimiento" value="4">4</label>
-
-                    <h4>Soporte</h4>
-                    <p>¿El sitio web es fácil de mantener y actualizar?</p>
-                    <label><input type="radio" name="furps-soporte" value="1">1</label>
-                    <label><input type="radio" name="furps-soporte" value="2">2</label>
-                    <label><input type="radio" name="furps-soporte" value="3">3</label>
-                    <label><input type="radio" name="furps-soporte" value="4">4</label>
-                </form>
+                <h4>Equivalencia de Puntajes</h4>
+                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                    <thead>
+                        <tr style="background-color: #e8f4f8;">
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CARACTERÍSTICAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">FACTOR</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Pnt. E</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Punt</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">F<br/>FUNCIONALIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Características y capacidades del programa</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-caracteristicas-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-caracteristicas-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-caracteristicas-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Generalidad de las funciones</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-generalidad-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-generalidad-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-generalidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Seguridad del Sistema</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-seguridad-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-func-seguridad-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="furps-funcionalidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">U<br/>FACILIDAD DE USO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de Prueba</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-prueba-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-prueba-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-prueba-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de configuración</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-config-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-config-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-config-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Compatibilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-compatibilidad-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-compatibilidad-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-compatibilidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Requisitos de instalación</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-instalacion-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-usab-instalacion-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="furps-usabilidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">R<br/>CONFIABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Frecuencia y severidad de fallos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-fallos-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-fallos-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-fallos-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Exactitud de las salidas</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-exactitud-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-exactitud-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-exactitud-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de predicción</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-prediccion-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-fiab-prediccion-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="furps-fiabilidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">P<br/>RENDIMIENTO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Factores Humanos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-humanos-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-humanos-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-humanos-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Factores Estéticos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-esteticos-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-esteticos-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-esteticos-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consistencia de la interfaz</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-consistencia-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-consistencia-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-consistencia-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Documentación</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-documentacion-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-rend-documentacion-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="furps-rendimiento-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="5">S<br/>SOPORTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Velocidad de procesamiento</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-velocidad-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-velocidad-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-velocidad-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Tiempo de respuesta</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-respuesta-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-respuesta-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-respuesta-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Consumo de recursos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-recursos-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-recursos-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-recursos-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento efectivo total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-efectivo-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-efectivo-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-efectivo-total">0</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Eficacia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-eficacia-esperado">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="furps-sop-eficacia-obtenido">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="furps-soporte-total">0</td>
+                        </tr>
+                    </tbody>
+                </table>
             </article>
         </section>
 

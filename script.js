@@ -6,26 +6,203 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para calcular resultados
     function calcularResultados() {
         const resultados = {
-            mccall: calcularModelo('mccall'),
-            boehm: calcularModelo('boehm'),
-            furps: calcularModelo('furps')
+            mccall: calcularModeloMcCall(),
+            boehm: calcularModeloBoehm(),
+            furps: calcularModeloFURPS()
         };
 
         mostrarResultados(resultados);
     }
 
-    // Función para calcular promedio de un modelo
-    function calcularModelo(modelo) {
-        const radios = document.querySelectorAll(`input[name^="${modelo}-"]:checked`);
-        if (radios.length === 0) return { promedio: 0, completado: false };
+    // Función para calcular modelo McCall
+    function calcularModeloMcCall() {
+        const selects = document.querySelectorAll('.puntaje-mccall');
+        let suma = 0;
+        let completados = 0;
 
-        const suma = Array.from(radios).reduce((sum, radio) => sum + parseInt(radio.value), 0);
-        const promedio = (suma / radios.length).toFixed(2);
+        selects.forEach(select => {
+            const valor = parseInt(select.value) || 0;
+            if (valor > 0) {
+                suma += valor;
+                completados++;
+            }
+        });
+
+        const promedio = completados > 0 ? (suma / completados).toFixed(2) : 0;
 
         return {
             promedio: parseFloat(promedio),
-            completado: radios.length > 0
+            completado: completados > 0
         };
+    }
+
+    // Función para calcular modelo Boehm
+    function calcularModeloBoehm() {
+        const selects = document.querySelectorAll('.puntaje-boehm');
+        let suma = 0;
+        let completados = 0;
+
+        selects.forEach(select => {
+            const valor = parseInt(select.value) || 0;
+            if (valor > 0) {
+                suma += valor;
+                completados++;
+            }
+        });
+
+        const promedio = completados > 0 ? (suma / completados).toFixed(2) : 0;
+
+        return {
+            promedio: parseFloat(promedio),
+            completado: completados > 0
+        };
+    }
+
+    // Función para calcular modelo FURPS
+    function calcularModeloFURPS() {
+        const selects = document.querySelectorAll('.puntaje-furps');
+        let suma = 0;
+        let completados = 0;
+
+        selects.forEach(select => {
+            const valor = parseInt(select.value) || 0;
+            if (valor > 0) {
+                suma += valor;
+                completados++;
+            }
+        });
+
+        const promedio = completados > 0 ? (suma / completados).toFixed(2) : 0;
+
+        return {
+            promedio: parseFloat(promedio),
+            completado: completados > 0
+        };
+    }
+
+    // Función para actualizar tabla de equivalencia McCall
+    function actualizarTablaMcCall() {
+        const caracteristicas = ['correctitud', 'fiabilidad', 'eficiencia', 'seguridad', 'facilidad-mantenimiento', 'facilidad-prueba', 'facilidad-comprension', 'facilidad-modificacion', 'portabilidad'];
+
+        caracteristicas.forEach(caracteristica => {
+            const select = document.querySelector(`[data-caracteristica="${caracteristica}"]`);
+            if (select) {
+                const valor = parseInt(select.value) || 0;
+                const esperado = 4; // Puntaje esperado siempre es 4
+                const total = (valor * esperado) / 4;
+
+                document.getElementById(`mccall-${caracteristica}-obtenido`).textContent = valor;
+                document.getElementById(`mccall-${caracteristica}-total`).textContent = total.toFixed(2);
+            }
+        });
+
+        // Calcular totales por nivel
+        const niveles = ['primitivo', 'intermedio', 'alto'];
+        niveles.forEach(nivel => {
+            const selectsNivel = document.querySelectorAll(`[data-nivel="${nivel}"]`);
+            let sumaNivel = 0;
+            let countNivel = 0;
+
+            selectsNivel.forEach(select => {
+                const valor = parseInt(select.value) || 0;
+                if (valor > 0) {
+                    sumaNivel += valor;
+                    countNivel++;
+                }
+            });
+
+            if (countNivel > 0) {
+                const promedioNivel = sumaNivel / countNivel;
+                document.getElementById(`mccall-${nivel}-total`).textContent = promedioNivel.toFixed(2);
+            }
+        });
+    }
+
+    // Función para actualizar tabla de equivalencia Boehm
+    function actualizarTablaBoehm() {
+        const caracteristicas = ['utilidad', 'fiabilidad', 'eficiencia', 'usabilidad', 'mantenibilidad', 'portabilidad', 'reusabilidad', 'testabilidad'];
+
+        caracteristicas.forEach(caracteristica => {
+            const select = document.querySelector(`[data-caracteristica="${caracteristica}"]`);
+            if (select) {
+                const valor = parseInt(select.value) || 0;
+                const esperado = 4; // Puntaje esperado siempre es 4
+                const total = (valor * esperado) / 4;
+
+                document.getElementById(`boehm-${caracteristica}-obtenido`).textContent = valor;
+                document.getElementById(`boehm-${caracteristica}-total`).textContent = total.toFixed(2);
+            }
+        });
+
+        // Calcular totales por nivel
+        const niveles = ['primitivo', 'intermedio', 'alto'];
+        niveles.forEach(nivel => {
+            const selectsNivel = document.querySelectorAll(`[data-nivel="${nivel}"]`);
+            let sumaNivel = 0;
+            let countNivel = 0;
+
+            selectsNivel.forEach(select => {
+                const valor = parseInt(select.value) || 0;
+                if (valor > 0) {
+                    sumaNivel += valor;
+                    countNivel++;
+                }
+            });
+
+            if (countNivel > 0) {
+                const promedioNivel = sumaNivel / countNivel;
+                document.getElementById(`boehm-${nivel}-total`).textContent = promedioNivel.toFixed(2);
+            }
+        });
+    }
+
+    // Función para actualizar tabla de equivalencia FURPS
+    function actualizarTablaFURPS() {
+        const factores = {
+            funcionalidad: ['caracteristicas', 'generalidad', 'seguridad'],
+            usabilidad: ['prueba', 'config', 'compatibilidad', 'instalacion'],
+            fiabilidad: ['fallos', 'exactitud', 'prediccion'],
+            rendimiento: ['humanos', 'esteticos', 'consistencia', 'documentacion'],
+            soporte: ['velocidad', 'respuesta', 'recursos', 'efectivo', 'eficacia']
+        };
+
+        // Actualizar cada factor
+        Object.keys(factores).forEach(caracteristica => {
+            const factoresCaracteristica = factores[caracteristica];
+            let sumaCaracteristica = 0;
+            let countCaracteristica = 0;
+
+            factoresCaracteristica.forEach(factor => {
+                const select = document.querySelector(`[data-caracteristica="${caracteristica}"][data-factor="${factor}"]`);
+                if (select) {
+                    const valor = parseInt(select.value) || 0;
+                    const esperado = 4; // Puntaje esperado siempre es 4
+                    const total = (valor * esperado) / 4;
+
+                    // Construir IDs correctos según el HTML
+                    let prefijo = '';
+                    if (caracteristica === 'funcionalidad') prefijo = 'func';
+                    else if (caracteristica === 'usabilidad') prefijo = 'usab';
+                    else if (caracteristica === 'fiabilidad') prefijo = 'fiab';
+                    else if (caracteristica === 'rendimiento') prefijo = 'rend';
+                    else if (caracteristica === 'soporte') prefijo = 'sop';
+
+                    document.getElementById(`furps-${prefijo}-${factor}-obtenido`).textContent = valor;
+                    document.getElementById(`furps-${prefijo}-${factor}-total`).textContent = total.toFixed(2);
+
+                    if (valor > 0) {
+                        sumaCaracteristica += total;
+                        countCaracteristica++;
+                    }
+                }
+            });
+
+            // Calcular total de la característica
+            if (countCaracteristica > 0) {
+                const promedioCaracteristica = sumaCaracteristica / countCaracteristica;
+                document.getElementById(`furps-${caracteristica}-total`).textContent = promedioCaracteristica.toFixed(2);
+            }
+        });
     }
 
     // Función para mostrar resultados
@@ -55,7 +232,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Event listeners para recalcular cuando cambien las selecciones
     document.addEventListener('change', function(e) {
-        if (e.target.type === 'radio' && e.target.name.startsWith('mccall-') || e.target.name.startsWith('boehm-') || e.target.name.startsWith('furps-')) {
+        if (e.target.classList.contains('puntaje-mccall')) {
+            actualizarTablaMcCall();
+            calcularResultados();
+        } else if (e.target.classList.contains('puntaje-boehm')) {
+            actualizarTablaBoehm();
+            calcularResultados();
+        } else if (e.target.classList.contains('puntaje-furps')) {
+            actualizarTablaFURPS();
             calcularResultados();
         }
     });
@@ -65,4 +249,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (calcularBtn) {
         calcularBtn.addEventListener('click', calcularResultados);
     }
+
+    // Calcular resultados iniciales
+    calcularResultados();
 });
