@@ -126,16 +126,193 @@ input[type="radio"] {
     accent-color: #F0544F; /* Secundario para radio buttons */
 }
 
-/* Estilos para tablas */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1rem 0;
-    background-color: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(51, 24, 50, 0.1);
+/* Estilos para la matriz de consolidación */
+.matriz-consolidacion {
+    margin: 20px 0;
+    overflow-x: auto;
+}
+
+.matriz-consolidacion table {
+    min-width: 1200px;
+}
+
+.checkbox-metrica {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: #007bff;
+}
+
+.checkbox-metrica:checked {
+    background-color: #007bff;
+}
+
+/* Estilos para filas de métricas por capacidad */
+.metrica-operacion {
+    background-color: rgba(253, 126, 20, 0.1);
+}
+
+.metrica-transicion {
+    background-color: rgba(13, 110, 253, 0.1);
+}
+
+.metrica-revision {
+    background-color: rgba(255, 193, 7, 0.1);
+}
+
+/* Estilos para botones de acción */
+.acciones-evaluacion {
+    display: flex;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn-guardar, .btn-cargar, .btn-limpiar {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
     font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 140px;
+}
+
+.btn-guardar {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+.btn-cargar {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-cargar:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.btn-limpiar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-limpiar:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+/* Estilos para el gráfico de resultados */
+.grafico-resultados {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.progreso-circular {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: conic-gradient(#28a745 0deg, #28a745 var(--porcentaje), #e9ecef var(--porcentaje), #e9ecef 360deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    position: relative;
+}
+
+.progreso-circular::before {
+    content: '';
+    width: 80px;
+    height: 80px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.progreso-circular > span {
+    position: relative;
+    z-index: 1;
+}
+
+#interpretacion-resultado {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #495057;
+}
+
+/* Estilos responsivos para móviles */
+@media (max-width: 768px) {
+    .acciones-evaluacion {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-guardar, .btn-cargar, .btn-limpiar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .grafico-resultados {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .progreso-circular {
+        margin-bottom: 20px;
+    }
+
+    .matriz-consolidacion {
+        font-size: 12px;
+    }
+
+    .matriz-consolidacion th,
+    .matriz-consolidacion td {
+        padding: 4px;
+    }
+}
+
+/* Estilos para métricas por capacidad */
+.metrica-operacion {
+    background-color: rgba(253, 126, 20, 0.05);
+}
+
+.metrica-transicion {
+    background-color: rgba(13, 110, 253, 0.05);
+}
+
+.metrica-revision {
+    background-color: rgba(255, 193, 7, 0.05);
+}
+
+/* Headers de capacidades */
+.capacidad-header-operacion {
+    background: linear-gradient(135deg, #fd7e14, #ff922b);
+    color: white;
+}
+
+.capacidad-header-transicion {
+    background: linear-gradient(135deg, #0d6efd, #3d8bfd);
+    color: white;
+}
+
+.capacidad-header-revision {
+    background: linear-gradient(135deg, #ffc107, #ffda6a);
+    color: white;
 }
 
 table th {
@@ -327,17 +504,139 @@ section {
     animation: fadeInUp 0.3s ease-out;
 }
 
-/* Estilos para resultados */
-#resultados {
-    background: linear-gradient(135deg, #FDF0D5 0%, white 100%);
-    border: 1px solid #F0544F;
+/* Gráficos y resultados */
+.grafico-resultados {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: white;
     border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(51, 24, 50, 0.08);
 }
 
-#resultados h3 {
+.progreso-circular {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#D81E5B 0% 0%, #f0f0f0 0% 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.progreso-circular::before {
+    content: attr(data-porcentaje) "%";
+    position: absolute;
     color: #D81E5B;
-    text-align: center;
-    margin-bottom: 1rem;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Sección de capacidades */
+.capacidades-resumen {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.capacidad-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 8px rgba(51, 24, 50, 0.08);
+    border-left: 4px solid;
+}
+
+.capacidad-card h4 {
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.capacidad-card .puntaje {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #D81E5B;
+}
+
+.capacidad-card .factores {
+    margin-top: 1rem;
+}
+
+.capacidad-card .factores ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.capacidad-card .factores li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(216, 30, 91, 0.1);
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Matriz de consolidación mejorada */
+.matriz-consolidacion {
+    overflow-x: auto;
+    margin: 2rem 0;
+}
+
+.matriz-consolidacion table {
+    min-width: 800px;
+}
+
+.checkbox-metrica {
+    width: 16px;
+    height: 16px;
+    accent-color: #D81E5B;
+}
+
+/* Botones de acción */
+.acciones-evaluacion {
+    display: flex;
+    gap: 1rem;
+    margin: 2rem 0;
+    flex-wrap: wrap;
+}
+
+.btn-guardar, .btn-cargar, .btn-limpiar {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.btn-guardar {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-guardar:hover {
+    background-color: #218838;
+}
+
+.btn-cargar {
+    background-color: #17a2b8;
+    color: white;
+}
+
+.btn-cargar:hover {
+    background-color: #138496;
+}
+
+.btn-limpiar {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-limpiar:hover {
+    background-color: #c82333;
 }
 
 /* Estilos para formularios mejorados */

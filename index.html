@@ -83,6 +83,53 @@
                 <h3>Plantilla McCall</h3>
                 <p>Presentado en 1977 por McCall, Richards & Walters, descompone la calidad en tres capacidades: Operación (40%), Transición (30%) y Revisión (30%).</p>
 
+                <!-- Sección de Capacidades y Factores -->
+                <h4>Capacidades y Factores de Calidad</h4>
+                <div class="capacidades-resumen">
+                    <div class="capacidad-card capacidad-operacion">
+                        <h4>🏗️ Operación (40 pts)</h4>
+                        <div class="puntaje" id="operacion-total">0</div>
+                        <div class="factores">
+                            <ul>
+                                <li>Corrección <span id="correccion-puntaje">0</span></li>
+                                <li>Confiabilidad <span id="confiabilidad-puntaje">0</span></li>
+                                <li>Usabilidad <span id="usabilidad-puntaje">0</span></li>
+                                <li>Integridad/Seguridad <span id="integridad-puntaje">0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="capacidad-card capacidad-transicion">
+                        <h4>🔄 Transición (30 pts)</h4>
+                        <div class="puntaje" id="transicion-total">0</div>
+                        <div class="factores">
+                            <ul>
+                                <li>Portabilidad <span id="portabilidad-puntaje">0</span></li>
+                                <li>Reusabilidad <span id="reusabilidad-puntaje">0</span></li>
+                                <li>Interoperabilidad <span id="interoperabilidad-puntaje">0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="capacidad-card capacidad-revision">
+                        <h4>🔍 Revisión (30 pts)</h4>
+                        <div class="puntaje" id="revision-total">0</div>
+                        <div class="factores">
+                            <ul>
+                                <li>Facilidad de Mantenimiento <span id="mantenimiento-puntaje">0</span></li>
+                                <li>Flexibilidad <span id="flexibilidad-puntaje">0</span></li>
+                                <li>Facilidad de Prueba <span id="prueba-puntaje">0</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin: 2rem 0; padding: 1rem; background-color: #f8f9fa; border-radius: 8px;">
+                    <h4 style="margin: 0; color: #D81E5B;">Puntaje Total Global</h4>
+                    <div style="font-size: 3rem; font-weight: bold; color: #D81E5B; margin: 0.5rem 0;" id="puntaje-global">0</div>
+                    <div style="color: #666;">Máximo: 100 puntos</div>
+                </div>
+
                 <h4>Cuestionario de Evaluación</h4>
                 <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                     <thead>
@@ -216,12 +263,12 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Modularidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Independencia funcional de los componentes.</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">¿Los componentes están bien modularizados?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Estandarización de datos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Uso de estándares en el manejo de datos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Utiliza estándares reconocidos para el manejo de datos?</td>
                             <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
                             <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="revision" data-metrica="modularidad">
+                                <select class="puntaje-mccall" data-factor="transicion" data-metrica="estandarizacion">
                                     <option value="">--</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
@@ -230,8 +277,249 @@
                                 </select>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Exactitud de cálculo y control</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Precisión en cálculos y control de procesos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Los cálculos y controles son precisos?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="exactitud">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Operatividad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de operación efectiva del sistema</td>
+                            <td style="border: 1px solid #ddd; padding: 8px;">¿Opera de manera efectiva en condiciones normales?</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
+                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="operatividad">
+                                    <option value="">--</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                </select>
+                            </td>
+                        </tr>
+
+                <!-- Matriz de Consolidación Mejorada -->
+                <h4>Matriz de Consolidación: Métricas vs Factores</h4>
+                <div class="matriz-consolidacion">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">MÉTRICA</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CORRECCIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CONFIABILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">USABILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">SEGURIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PORTABILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">REUSABILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">INTEROPERABILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">MANTENIMIENTO</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">FLEXIBILIDAD</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PRUEBA</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Compleción de funciones</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="correccion" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-revision">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Complejidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="usabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="mantenimiento" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="flexibilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="prueba" checked></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Concisión</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="confiabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Consistencia</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="usabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Eficiencia de ejecución</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="confiabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-transicion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Estandarización de datos</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="portabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="reusabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="interoperabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Exactitud de cálculo y control</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="correccion" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="confiabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="seguridad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-transicion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Independencia del software</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="portabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="interoperabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-revision">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Modularidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="reusabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="mantenimiento" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="flexibilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="prueba" checked></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Operatividad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="correccion" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="confiabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="usabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Seguridad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="usabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="seguridad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="mantenimiento"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="flexibilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="prueba"></td>
+                            </tr>
+                            <tr class="metrica-operacion">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Simplicidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="correccion"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="confiabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="usabilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="seguridad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="portabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="reusabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="interoperabilidad"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="mantenimiento" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="flexibilidad" checked></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="prueba" checked></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Botones de acción -->
+                <div class="acciones-evaluacion">
+                    <button class="btn-guardar" onclick="guardarEvaluacion()">💾 Guardar Evaluación</button>
+                    <button class="btn-cargar" onclick="cargarEvaluacion()">📂 Cargar Evaluación</button>
+                    <button class="btn-limpiar" onclick="limpiarEvaluacion()">🗑️ Limpiar Todo</button>
+                </div>
+
+                <!-- Gráfico de resultados -->
+                <h4>Resultado Final</h4>
+                <div class="grafico-resultados">
+                    <div class="progreso-circular" data-porcentaje="0" id="grafico-progreso">
+                        0%
+                    </div>
+                    <div style="margin-left: 2rem;">
+                        <h5>Interpretación del Resultado</h5>
+                        <p id="interpretacion-resultado">Complete la evaluación para ver los resultados.</p>
+                        <div style="margin-top: 1rem;">
+                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                <div style="width: 20px; height: 20px; background-color: #fd7e14; margin-right: 10px; border-radius: 3px;"></div>
+                                <span>Operación (40%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                                <div style="width: 20px; height: 20px; background-color: #0d6efd; margin-right: 10px; border-radius: 3px;"></div>
+                                <span>Transición (30%)</span>
+                            </div>
+                            <div style="display: flex; align-items: center;">
+                                <div style="width: 20px; height: 20px; background-color: #ffc107; margin-right: 10px; border-radius: 3px;"></div>
+                                <span>Revisión (30%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <h4>Consolidación de Puntajes</h4>
                 <div class="table-container">

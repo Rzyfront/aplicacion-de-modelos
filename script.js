@@ -252,4 +252,234 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Calcular resultados iniciales
     calcularResultados();
+
+    // ===== NUEVAS FUNCIONALIDADES PARA LA MATRIZ DE CONSOLIDACIÓN =====
+
+    // Función para actualizar cálculos basados en checkboxes
+    function actualizarMatrizConsolidacion() {
+        const checkboxes = document.querySelectorAll('.checkbox-metrica');
+        const resultadosFactores = {};
+
+        // Inicializar contadores para cada factor
+        const factores = ['correccion', 'confiabilidad', 'usabilidad', 'seguridad', 'portabilidad', 'reusabilidad', 'interoperabilidad', 'mantenimiento', 'flexibilidad', 'prueba'];
+        factores.forEach(factor => {
+            resultadosFactores[factor] = { total: 0, count: 0 };
+        });
+
+        // Calcular puntajes basados en checkboxes marcados
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                const metrica = checkbox.dataset.metrica;
+                const factor = checkbox.dataset.factor;
+                const puntajeMetrica = obtenerPuntajeMetrica(metrica);
+
+                if (puntajeMetrica > 0) {
+                    resultadosFactores[factor].total += puntajeMetrica;
+                    resultadosFactores[factor].count++;
+                }
+            }
+        });
+
+        // Calcular promedios por factor
+        factores.forEach(factor => {
+            const { total, count } = resultadosFactores[factor];
+            const promedio = count > 0 ? (total / count).toFixed(2) : '0.00';
+            actualizarPuntajeFactor(factor, promedio);
+        });
+
+        // Actualizar gráfico de resultados
+        actualizarGraficoResultados();
+    }
+
+    // Función para obtener puntaje de una métrica del cuestionario
+    function obtenerPuntajeMetrica(metrica) {
+        const select = document.querySelector(`[data-metrica="${metrica}"]`);
+        return select ? (parseInt(select.value) || 0) : 0;
+    }
+
+    // Función para actualizar puntaje de factor en la tabla de consolidación
+    function actualizarPuntajeFactor(factor, promedio) {
+        const elemento = document.getElementById(`mccall-${factor}`);
+        if (elemento) {
+            elemento.textContent = promedio;
+        }
+    }
+
+    // Función para actualizar el gráfico circular de resultados
+    function actualizarGraficoResultados() {
+        const operacion = calcularPuntajeCapacidad('operacion');
+        const transicion = calcularPuntajeCapacidad('transicion');
+        const revision = calcularPuntajeCapacidad('revision');
+
+        // Calcular porcentaje total ponderado
+        const totalPonderado = (operacion * 0.4) + (transicion * 0.3) + (revision * 0.3);
+        const porcentaje = Math.min(totalPonderado * 25, 100); // Convertir a porcentaje (0-100)
+
+        // Actualizar gráfico circular
+        const grafico = document.getElementById('grafico-progreso');
+        grafico.style.setProperty('--porcentaje', `${porcentaje * 3.6}deg`); // 3.6 = 360/100
+        grafico.textContent = `${Math.round(porcentaje)}%`;
+
+        // Actualizar interpretación
+        const interpretacion = document.getElementById('interpretacion-resultado');
+        if (porcentaje >= 80) {
+            interpretacion.textContent = 'Excelente calidad del software. El sistema cumple con altos estándares en todas las capacidades evaluadas.';
+        } else if (porcentaje >= 60) {
+            interpretacion.textContent = 'Buena calidad del software. Hay áreas que pueden mejorarse, pero el sistema es funcional y confiable.';
+        } else if (porcentaje >= 40) {
+            interpretacion.textContent = 'Calidad aceptable. Se requieren mejoras significativas en varias áreas para optimizar el rendimiento.';
+        } else {
+            interpretacion.textContent = 'Calidad deficiente. Es necesario revisar y mejorar fundamentalmente el diseño y desarrollo del software.';
+        }
+    }
+
+    // Función para calcular puntaje de capacidad basado en factores
+    function calcularPuntajeCapacidad(capacidad) {
+        const factoresPorCapacidad = {
+            operacion: ['correccion', 'confiabilidad', 'usabilidad', 'seguridad'],
+            transicion: ['portabilidad', 'reusabilidad', 'interoperabilidad'],
+            revision: ['mantenimiento', 'flexibilidad', 'prueba']
+        };
+
+        const factores = factoresPorCapacidad[capacidad] || [];
+        let suma = 0;
+        let count = 0;
+
+        factores.forEach(factor => {
+            const elemento = document.getElementById(`mccall-${factor}`);
+            if (elemento) {
+                const valor = parseFloat(elemento.textContent) || 0;
+                if (valor > 0) {
+                    suma += valor;
+                    count++;
+                }
+            }
+        });
+
+        return count > 0 ? suma / count : 0;
+    }
+
+    // ===== FUNCIONALIDADES DE LOCALSTORAGE =====
+
+    // Función para guardar evaluación
+    function guardarEvaluacion() {
+        try {
+            const datosEvaluacion = {
+                timestamp: new Date().toISOString(),
+                cuestionario: {},
+                matriz: {},
+                resultados: {}
+            };
+
+            // Guardar datos del cuestionario
+            document.querySelectorAll('.puntaje-mccall').forEach(select => {
+                const metrica = select.dataset.metrica;
+                const factor = select.dataset.factor;
+                const valor = select.value;
+                datosEvaluacion.cuestionario[`${factor}-${metrica}`] = valor;
+            });
+
+            // Guardar estado de checkboxes
+            document.querySelectorAll('.checkbox-metrica').forEach(checkbox => {
+                const metrica = checkbox.dataset.metrica;
+                const factor = checkbox.dataset.factor;
+                datosEvaluacion.matriz[`${metrica}-${factor}`] = checkbox.checked;
+            });
+
+            // Guardar en localStorage
+            localStorage.setItem('evaluacionMcCall', JSON.stringify(datosEvaluacion));
+
+            alert('Evaluación guardada exitosamente en el navegador.');
+        } catch (error) {
+            alert('Error al guardar la evaluación: ' + error.message);
+        }
+    }
+
+    // Función para cargar evaluación
+    function cargarEvaluacion() {
+        try {
+            const datosGuardados = localStorage.getItem('evaluacionMcCall');
+            if (!datosGuardados) {
+                alert('No se encontró ninguna evaluación guardada.');
+                return;
+            }
+
+            const datosEvaluacion = JSON.parse(datosGuardados);
+
+            // Cargar datos del cuestionario
+            Object.keys(datosEvaluacion.cuestionario).forEach(key => {
+                const [factor, metrica] = key.split('-');
+                const select = document.querySelector(`[data-factor="${factor}"][data-metrica="${metrica}"]`);
+                if (select) {
+                    select.value = datosEvaluacion.cuestionario[key];
+                }
+            });
+
+            // Cargar estado de checkboxes
+            Object.keys(datosEvaluacion.matriz).forEach(key => {
+                const [metrica, factor] = key.split('-');
+                const checkbox = document.querySelector(`[data-metrica="${metrica}"][data-factor="${factor}"]`);
+                if (checkbox) {
+                    checkbox.checked = datosEvaluacion.matriz[key];
+                }
+            });
+
+            // Recalcular todo
+            actualizarTablaMcCall();
+            actualizarMatrizConsolidacion();
+            calcularResultados();
+
+            alert('Evaluación cargada exitosamente.');
+        } catch (error) {
+            alert('Error al cargar la evaluación: ' + error.message);
+        }
+    }
+
+    // Función para limpiar evaluación
+    function limpiarEvaluacion() {
+        if (!confirm('¿Está seguro de que desea limpiar toda la evaluación? Esta acción no se puede deshacer.')) {
+            return;
+        }
+
+        try {
+            // Limpiar selects del cuestionario
+            document.querySelectorAll('.puntaje-mccall').forEach(select => {
+                select.value = '';
+            });
+
+            // Limpiar checkboxes
+            document.querySelectorAll('.checkbox-metrica').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+
+            // Limpiar localStorage
+            localStorage.removeItem('evaluacionMcCall');
+
+            // Recalcular todo
+            actualizarTablaMcCall();
+            actualizarMatrizConsolidacion();
+            calcularResultados();
+
+            alert('Evaluación limpiada exitosamente.');
+        } catch (error) {
+            alert('Error al limpiar la evaluación: ' + error.message);
+        }
+    }
+
+    // ===== EVENT LISTENERS PARA NUEVAS FUNCIONALIDADES =====
+
+    // Event listener para checkboxes de la matriz
+    document.addEventListener('change', function(e) {
+        if (e.target.classList.contains('checkbox-metrica')) {
+            actualizarMatrizConsolidacion();
+        }
+    });
+
+    // Hacer funciones globales para los botones
+    window.guardarEvaluacion = guardarEvaluacion;
+    window.cargarEvaluacion = cargarEvaluacion;
+    window.limpiarEvaluacion = limpiarEvaluacion;
+
+    // Inicializar cálculos de matriz
+    actualizarMatrizConsolidacion();
 });
