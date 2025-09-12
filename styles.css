@@ -5,30 +5,34 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #FDF0D5; /* Background crema claro */
+    color: #331832; /* Font morado oscuro */
 }
 
 header {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #D81E5B 0%, #F0544F 100%);
     color: white;
     text-align: center;
     padding: 2rem 0;
+    box-shadow: 0 2px 8px rgba(216, 30, 91, 0.2);
 }
 
 header h1 {
     margin: 0;
     font-size: 2.5rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
 }
 
 header p {
     font-size: 1.2rem;
     margin: 0.5rem 0 0 0;
+    opacity: 0.9;
 }
 
 nav {
-    background-color: #34495e;
+    background-color: #331832;
     padding: 1rem 0;
+    box-shadow: 0 1px 4px rgba(51, 24, 50, 0.1);
 }
 
 nav ul {
@@ -46,14 +50,16 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 500;
     padding: 0.5rem 1rem;
-    border-radius: 5px;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+    border: none;
 }
 
 nav ul li a:hover {
-    background-color: #3498db;
+    background-color: #F0544F;
+    border-color: #D81E5B;
 }
 
 main {
@@ -67,18 +73,29 @@ section {
     margin-bottom: 2rem;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 8px rgba(51, 24, 50, 0.08);
+    border: 1px solid rgba(216, 30, 91, 0.05);
+}
+
+section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(51, 24, 50, 0.15);
 }
 
 section h2 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
+    color: #D81E5B;
+    border-bottom: 2px solid #F0544F;
     padding-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
 }
 
 section h3 {
-    color: #34495e;
+    color: #331832;
     margin-top: 2rem;
+    font-size: 1.4rem;
+    border-left: 3px solid #F0544F;
+    padding-left: 1rem;
 }
 
 article {
@@ -94,37 +111,258 @@ form {
 }
 
 form h4 {
-    color: #2c3e50;
+    color: #D81E5B; /* Primario */
     margin-bottom: 0.5rem;
+    font-size: 1.2rem;
 }
 
 form p {
     margin-bottom: 1rem;
+    color: #331832; /* Font color */
 }
 
 input[type="radio"] {
     margin-right: 0.5rem;
+    accent-color: #F0544F; /* Secundario para radio buttons */
+}
+
+/* Estilos para tablas */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(51, 24, 50, 0.1);
+    font-size: 14px;
+}
+
+table th {
+    background: linear-gradient(135deg, #D81E5B 0%, #F0544F 100%);
+    color: white;
+    padding: 8px 4px;
+    text-align: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 12px;
+}
+
+table td {
+    padding: 6px 4px;
+    border-bottom: 1px solid rgba(216, 30, 91, 0.1);
+    text-align: center;
+    font-size: 13px;
+}
+
+table tr:nth-child(even) {
+    background-color: rgba(216, 30, 91, 0.02);
+}
+
+table tr:hover td {
+    background-color: rgba(240, 84, 79, 0.03);
+}
+
+/* Tabla compacta para consolidación de puntajes */
+.consolidacion-table {
+    font-size: 12px;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.consolidacion-table th {
+    padding: 6px 2px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.consolidacion-table td {
+    padding: 4px 2px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+/* Tabla FURPS más compacta */
+.furps-table th,
+.furps-table td {
+    padding: 4px 6px;
+    font-size: 13px;
+}
+
+.furps-table th {
+    font-size: 12px;
+}
+
+/* Contenedor para tablas con scroll horizontal si es necesario */
+.table-container {
+    overflow-x: auto;
+    margin: 1rem 0;
+}
+
+.table-container table {
+    min-width: 100%;
+    white-space: nowrap;
+}
+
+/* Estilos para evitar overflow en toda la aplicación */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+select {
+    padding: 6px 10px;
+    border: 1px solid #F0544F;
+    border-radius: 4px;
+    background-color: white;
+    color: #331832;
+    font-size: 13px;
+    transition: border-color 0.2s ease;
+    cursor: pointer;
+}
+
+select:focus {
+    outline: none;
+    border-color: #D81E5B;
+    box-shadow: 0 0 0 2px rgba(216, 30, 91, 0.1);
+}
+
+select:hover {
+    border-color: #D81E5B;
+}
+
+/* Botones */
+button, .btn {
+    background: linear-gradient(135deg, #D81E5B 0%, #F0544F 100%);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-transform: none;
+    letter-spacing: normal;
+    box-shadow: 0 2px 4px rgba(216, 30, 91, 0.2);
+}
+
+button:hover, .btn:hover {
+    background: linear-gradient(135deg, #F0544F 0%, #D81E5B 100%);
+    box-shadow: 0 2px 6px rgba(216, 30, 91, 0.3);
 }
 
 footer {
-    background-color: #2c3e50;
+    background: linear-gradient(135deg, #331832 0%, #D81E5B 100%);
     color: white;
     text-align: center;
-    padding: 1rem 0;
-    margin-top: 2rem;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+    box-shadow: 0 -2px 8px rgba(51, 24, 50, 0.1);
 }
 
+footer p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     nav ul li {
         display: block;
         margin: 0.5rem 0;
     }
-    
+
+    nav ul li a {
+        display: block;
+        margin: 0.5rem auto;
+        width: 200px;
+    }
+
     main {
         padding: 0 1rem;
     }
-    
+
     section {
         padding: 1rem;
+        margin-bottom: 1rem;
     }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    table th, table td {
+        padding: 8px 4px;
+    }
+}
+
+/* Animaciones sutiles */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+/* Estilos para resultados */
+#resultados {
+    background: linear-gradient(135deg, #FDF0D5 0%, white 100%);
+    border: 1px solid #F0544F;
+    border-radius: 8px;
+}
+
+#resultados h3 {
+    color: #D81E5B;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Estilos para formularios mejorados */
+.form-group {
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    background-color: rgba(216, 30, 91, 0.02);
+    border-radius: 6px;
+    border-left: 2px solid #F0544F;
+}
+
+/* Scrollbar moderno */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #FDF0D5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #F0544F;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #D81E5B;
 }
