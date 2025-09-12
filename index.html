@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Modelos de Calidad en Aplicaciones Web</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Análisis de la Aplicación de Modelos de Calidad</h1>
+        <p>Actividad Académica - Evaluación de una Página Web</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#presentacion">Presentación</a></li>
+            <li><a href="#modelos">Modelos de Calidad</a></li>
+            <li><a href="#evaluacion">Evaluación</a></li>
+            <li><a href="#resultados">Resultados</a></li>
+            <li><a href="#conclusiones">Conclusiones</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="presentacion">
+            <h2>Presentación de la Actividad</h2>
+            <p>Esta actividad académica tiene como objetivo analizar la aplicación de modelos de calidad en una página web específica. Seleccionaremos una red social o sitio web y aplicaremos los modelos de calidad McCall, Boehm y FURPS utilizando plantillas de evaluación con cuestionarios y escalas valorativas.</p>
+            <p><strong>Red seleccionada:</strong> [Indique aquí la red o sitio web a analizar, ej. Facebook, Twitter, etc.]</p>
+        </section>
+
+        <section id="modelos">
+            <h2>Descripción de los Modelos Utilizados</h2>
+            <article id="mccall">
+                <h3>Modelo McCall</h3>
+                <p>El modelo de calidad de McCall se centra en factores de calidad que afectan la operación, revisión y transición del software. Incluye factores como:</p>
+                <ul>
+                    <li>Correctitud</li>
+                    <li>Fiabilidad</li>
+                    <li>Eficiencia</li>
+                    <li>Integridad</li>
+                    <li>Usabilidad</li>
+                    <li>Mantenibilidad</li>
+                    <li>Flexibilidad</li>
+                    <li>Portabilidad</li>
+                    <li>Reusabilidad</li>
+                    <li>Interoperabilidad</li>
+                </ul>
+            </article>
+            <article id="boehm">
+                <h3>Modelo Boehm</h3>
+                <p>El modelo de calidad de Boehm enfatiza la utilidad del software y su capacidad para ser mantenido y portado. Los factores principales son:</p>
+                <ul>
+                    <li>Utilidad</li>
+                    <li>Mantenibilidad</li>
+                    <li>Portabilidad</li>
+                </ul>
+            </article>
+            <article id="furps">
+                <h3>Modelo FURPS</h3>
+                <p>FURPS es un acrónimo que representa los aspectos clave de calidad: Funcionalidad, Usabilidad, Fiabilidad, Rendimiento y Soporte. Es útil para evaluar tanto requisitos funcionales como no funcionales.</p>
+                <ul>
+                    <li><strong>Funcionalidad (Functionality):</strong> Capacidad del sistema para realizar las funciones requeridas</li>
+                    <li><strong>Usabilidad (Usability):</strong> Facilidad de uso del sistema</li>
+                    <li><strong>Fiabilidad (Reliability):</strong> Capacidad para mantener su rendimiento bajo condiciones normales</li>
+                    <li><strong>Rendimiento (Performance):</strong> Eficiencia en el uso de recursos</li>
+                    <li><strong>Soporte (Supportability):</strong> Facilidad para ser modificado, probado y mantenido</li>
+                </ul>
+            </article>
+        </section>
+
+        <section id="evaluacion">
+            <h2>Aplicación de las Plantillas de Evaluación</h2>
+            <p>Aquí se aplicarán las plantillas de evaluación para cada modelo. Utilizaremos una escala valorativa del 1 al 5, donde:</p>
+            <ul>
+                <li>1 = Muy deficiente</li>
+                <li>2 = Deficiente</li>
+                <li>3 = Aceptable</li>
+                <li>4 = Bueno</li>
+                <li>5 = Excelente</li>
+            </ul>
+            <button id="calcular-btn" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Calcular Resultados</button>
+
+            <article id="plantilla-mccall">
+                <h3>Plantilla McCall</h3>
+                <form id="form-mccall">
+                    <h4>Correctitud</h4>
+                    <p>¿El sitio web produce resultados correctos y precisos?</p>
+                    <label><input type="radio" name="mccall-correctitud" value="1">1</label>
+                    <label><input type="radio" name="mccall-correctitud" value="2">2</label>
+                    <label><input type="radio" name="mccall-correctitud" value="3">3</label>
+                    <label><input type="radio" name="mccall-correctitud" value="4">4</label>
+                    <label><input type="radio" name="mccall-correctitud" value="5">5</label>
+
+                    <h4>Fiabilidad</h4>
+                    <p>¿El sitio web es confiable y consistente en su funcionamiento?</p>
+                    <label><input type="radio" name="mccall-fiabilidad" value="1">1</label>
+                    <label><input type="radio" name="mccall-fiabilidad" value="2">2</label>
+                    <label><input type="radio" name="mccall-fiabilidad" value="3">3</label>
+                    <label><input type="radio" name="mccall-fiabilidad" value="4">4</label>
+                    <label><input type="radio" name="mccall-fiabilidad" value="5">5</label>
+
+                    <h4>Eficiencia</h4>
+                    <p>¿El sitio web utiliza recursos de manera eficiente?</p>
+                    <label><input type="radio" name="mccall-eficiencia" value="1">1</label>
+                    <label><input type="radio" name="mccall-eficiencia" value="2">2</label>
+                    <label><input type="radio" name="mccall-eficiencia" value="3">3</label>
+                    <label><input type="radio" name="mccall-eficiencia" value="4">4</label>
+                    <label><input type="radio" name="mccall-eficiencia" value="5">5</label>
+
+                    <h4>Usabilidad</h4>
+                    <p>¿El sitio web es fácil de usar y entender?</p>
+                    <label><input type="radio" name="mccall-usabilidad" value="1">1</label>
+                    <label><input type="radio" name="mccall-usabilidad" value="2">2</label>
+                    <label><input type="radio" name="mccall-usabilidad" value="3">3</label>
+                    <label><input type="radio" name="mccall-usabilidad" value="4">4</label>
+                    <label><input type="radio" name="mccall-usabilidad" value="5">5</label>
+
+                    <h4>Mantenibilidad</h4>
+                    <p>¿El sitio web es fácil de mantener y actualizar?</p>
+                    <label><input type="radio" name="mccall-mantenibilidad" value="1">1</label>
+                    <label><input type="radio" name="mccall-mantenibilidad" value="2">2</label>
+                    <label><input type="radio" name="mccall-mantenibilidad" value="3">3</label>
+                    <label><input type="radio" name="mccall-mantenibilidad" value="4">4</label>
+                    <label><input type="radio" name="mccall-mantenibilidad" value="5">5</label>
+                </form>
+            </article>
+
+            <article id="plantilla-boehm">
+                <h3>Plantilla Boehm</h3>
+                <form id="form-boehm">
+                    <h4>Utilidad</h4>
+                    <p>¿El sitio web satisface las necesidades del usuario?</p>
+                    <label><input type="radio" name="boehm-utilidad" value="1">1</label>
+                    <label><input type="radio" name="boehm-utilidad" value="2">2</label>
+                    <label><input type="radio" name="boehm-utilidad" value="3">3</label>
+                    <label><input type="radio" name="boehm-utilidad" value="4">4</label>
+                    <label><input type="radio" name="boehm-utilidad" value="5">5</label>
+
+                    <h4>Mantenibilidad</h4>
+                    <p>¿Es fácil modificar y actualizar el sitio web?</p>
+                    <label><input type="radio" name="boehm-mantenibilidad" value="1">1</label>
+                    <label><input type="radio" name="boehm-mantenibilidad" value="2">2</label>
+                    <label><input type="radio" name="boehm-mantenibilidad" value="3">3</label>
+                    <label><input type="radio" name="boehm-mantenibilidad" value="4">4</label>
+                    <label><input type="radio" name="boehm-mantenibilidad" value="5">5</label>
+
+                    <h4>Portabilidad</h4>
+                    <p>¿El sitio web puede adaptarse fácilmente a diferentes entornos?</p>
+                    <label><input type="radio" name="boehm-portabilidad" value="1">1</label>
+                    <label><input type="radio" name="boehm-portabilidad" value="2">2</label>
+                    <label><input type="radio" name="boehm-portabilidad" value="3">3</label>
+                    <label><input type="radio" name="boehm-portabilidad" value="4">4</label>
+                    <label><input type="radio" name="boehm-portabilidad" value="5">5</label>
+                </form>
+            </article>
+
+            <article id="plantilla-furps">
+                <h3>Plantilla FURPS</h3>
+                <form id="form-furps">
+                    <h4>Funcionalidad</h4>
+                    <p>¿El sitio web incluye todas las funciones requeridas?</p>
+                    <label><input type="radio" name="furps-funcionalidad" value="1">1</label>
+                    <label><input type="radio" name="furps-funcionalidad" value="2">2</label>
+                    <label><input type="radio" name="furps-funcionalidad" value="3">3</label>
+                    <label><input type="radio" name="furps-funcionalidad" value="4">4</label>
+                    <label><input type="radio" name="furps-funcionalidad" value="5">5</label>
+
+                    <h4>Usabilidad</h4>
+                    <p>¿El sitio web es intuitivo y fácil de navegar?</p>
+                    <label><input type="radio" name="furps-usabilidad" value="1">1</label>
+                    <label><input type="radio" name="furps-usabilidad" value="2">2</label>
+                    <label><input type="radio" name="furps-usabilidad" value="3">3</label>
+                    <label><input type="radio" name="furps-usabilidad" value="4">4</label>
+                    <label><input type="radio" name="furps-usabilidad" value="5">5</label>
+
+                    <h4>Fiabilidad</h4>
+                    <p>¿El sitio web funciona de manera consistente sin errores frecuentes?</p>
+                    <label><input type="radio" name="furps-fiabilidad" value="1">1</label>
+                    <label><input type="radio" name="furps-fiabilidad" value="2">2</label>
+                    <label><input type="radio" name="furps-fiabilidad" value="3">3</label>
+                    <label><input type="radio" name="furps-fiabilidad" value="4">4</label>
+                    <label><input type="radio" name="furps-fiabilidad" value="5">5</label>
+
+                    <h4>Rendimiento</h4>
+                    <p>¿El sitio web carga rápidamente y responde de manera eficiente?</p>
+                    <label><input type="radio" name="furps-rendimiento" value="1">1</label>
+                    <label><input type="radio" name="furps-rendimiento" value="2">2</label>
+                    <label><input type="radio" name="furps-rendimiento" value="3">3</label>
+                    <label><input type="radio" name="furps-rendimiento" value="4">4</label>
+                    <label><input type="radio" name="furps-rendimiento" value="5">5</label>
+
+                    <h4>Soporte</h4>
+                    <p>¿El sitio web es fácil de mantener y actualizar?</p>
+                    <label><input type="radio" name="furps-soporte" value="1">1</label>
+                    <label><input type="radio" name="furps-soporte" value="2">2</label>
+                    <label><input type="radio" name="furps-soporte" value="3">3</label>
+                    <label><input type="radio" name="furps-soporte" value="4">4</label>
+                    <label><input type="radio" name="furps-soporte" value="5">5</label>
+                </form>
+            </article>
+        </section>
+
+        <section id="resultados">
+            <h2>Resultados</h2>
+            <p>Aquí se presentarán los resultados del análisis basado en las evaluaciones realizadas.</p>
+            <div id="resultados-contenido">
+                <!-- Los resultados se mostrarán aquí -->
+            </div>
+        </section>
+
+        <section id="conclusiones">
+            <h2>Conclusiones</h2>
+            <p>En esta sección se incluirán las conclusiones derivadas del análisis de calidad aplicado a la página web seleccionada.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Actividad Académica - Análisis de Modelos de Calidad</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
