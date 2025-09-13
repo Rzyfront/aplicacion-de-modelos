@@ -9,6 +9,11 @@ body {
     color: #331832; /* Font morado oscuro */
 }
 
+/* Evitar scroll horizontal global */
+html, body {
+    overflow-x: hidden;
+}
+
 header {
     background: linear-gradient(135deg, #D81E5B 0%, #F0544F 100%);
     color: white;
@@ -134,6 +139,27 @@ input[type="radio"] {
 
 .matriz-consolidacion table {
     min-width: 1200px;
+}
+
+/* Evitar overflow horizontal en la matriz de relación */
+.matriz-relacion {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.matriz-relacion table {
+    width: 100%;
+    table-layout: fixed; /* distribuye columnas y evita que se desborde */
+    white-space: normal !important; /* forzar wrapping dentro de este contexto */
+}
+
+.matriz-relacion th,
+.matriz-relacion td {
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: normal;
 }
 
 .checkbox-metrica {
@@ -392,6 +418,7 @@ html, body {
     width: 100%;
 }
 
+/* Modo informe estático: desactivar interactividad visible */
 select {
     padding: 6px 10px;
     border: 1px solid #F0544F;
@@ -400,7 +427,9 @@ select {
     color: #331832;
     font-size: 13px;
     transition: border-color 0.2s ease;
-    cursor: pointer;
+    cursor: default;
+    pointer-events: none; /* bloquear cambios */
+    background-color: #f8f9fa;
 }
 
 select:focus {
@@ -422,7 +451,7 @@ button, .btn {
     border-radius: 6px;
     font-size: 14px;
     font-weight: 500;
-    cursor: pointer;
+    cursor: default;
     transition: background-color 0.2s ease;
     text-transform: none;
     letter-spacing: normal;
@@ -593,7 +622,11 @@ section {
     width: 16px;
     height: 16px;
     accent-color: #D81E5B;
+    pointer-events: none; /* bloquear cambios */
 }
+
+/* Ocultar posible barra de evaluaciones si quedó en el DOM por cache */
+#evaluaciones-bar { display: none !important; }
 
 /* Botones de acción */
 .acciones-evaluacion {

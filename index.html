@@ -77,7 +77,7 @@
                 <li>3 = Bueno</li>
                 <li>4 = Excelente</li>
             </ul>
-            <button id="calcular-btn" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; border-radius: 5px; cursor: pointer;">Calcular Resultados</button>
+            <!-- Informe estático: sin cálculos ni botones dinámicos -->
 
             <article id="plantilla-mccall">
                 <h3>Plantilla McCall</h3>
@@ -88,37 +88,37 @@
                 <div class="capacidades-resumen">
                     <div class="capacidad-card capacidad-operacion">
                         <h4>🏗️ Operación (40 pts)</h4>
-                        <div class="puntaje" id="operacion-total">0</div>
+                        <div class="puntaje" id="operacion-total">40</div>
                         <div class="factores">
                             <ul>
-                                <li>Corrección <span id="correccion-puntaje">0</span></li>
-                                <li>Confiabilidad <span id="confiabilidad-puntaje">0</span></li>
-                                <li>Usabilidad <span id="usabilidad-puntaje">0</span></li>
-                                <li>Integridad/Seguridad <span id="integridad-puntaje">0</span></li>
+                                <li>Corrección <span id="correccion-puntaje">10</span></li>
+                                <li>Confiabilidad <span id="confiabilidad-puntaje">10</span></li>
+                                <li>Usabilidad <span id="usabilidad-puntaje">10</span></li>
+                                <li>Integridad/Seguridad <span id="integridad-puntaje">10</span></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="capacidad-card capacidad-transicion">
                         <h4>🔄 Transición (30 pts)</h4>
-                        <div class="puntaje" id="transicion-total">0</div>
+                        <div class="puntaje" id="transicion-total">30</div>
                         <div class="factores">
                             <ul>
-                                <li>Portabilidad <span id="portabilidad-puntaje">0</span></li>
-                                <li>Reusabilidad <span id="reusabilidad-puntaje">0</span></li>
-                                <li>Interoperabilidad <span id="interoperabilidad-puntaje">0</span></li>
+                                <li>Portabilidad <span id="portabilidad-puntaje">10</span></li>
+                                <li>Reusabilidad <span id="reusabilidad-puntaje">10</span></li>
+                                <li>Interoperabilidad <span id="interoperabilidad-puntaje">10</span></li>
                             </ul>
                         </div>
                     </div>
 
                     <div class="capacidad-card capacidad-revision">
                         <h4>🔍 Revisión (30 pts)</h4>
-                        <div class="puntaje" id="revision-total">0</div>
+                        <div class="puntaje" id="revision-total">30</div>
                         <div class="factores">
                             <ul>
-                                <li>Facilidad de Mantenimiento <span id="mantenimiento-puntaje">0</span></li>
-                                <li>Flexibilidad <span id="flexibilidad-puntaje">0</span></li>
-                                <li>Facilidad de Prueba <span id="prueba-puntaje">0</span></li>
+                                <li>Facilidad de Mantenimiento <span id="mantenimiento-puntaje">10</span></li>
+                                <li>Flexibilidad <span id="flexibilidad-puntaje">10</span></li>
+                                <li>Facilidad de Prueba <span id="prueba-puntaje">10</span></li>
                             </ul>
                         </div>
                     </div>
@@ -126,8 +126,209 @@
 
                 <div style="text-align: center; margin: 2rem 0; padding: 1rem; background-color: #f8f9fa; border-radius: 8px;">
                     <h4 style="margin: 0; color: #D81E5B;">Puntaje Total Global</h4>
-                    <div style="font-size: 3rem; font-weight: bold; color: #D81E5B; margin: 0.5rem 0;" id="puntaje-global">0</div>
+                    <div style="font-size: 3rem; font-weight: bold; color: #D81E5B; margin: 0.5rem 0;" id="puntaje-global">100</div>
                     <div style="color: #666;">Máximo: 100 puntos</div>
+                </div>
+
+                <!-- Relación entre Factores y Métricas -->
+                <h4>Relación entre Factores de Calidad y Métricas de la Calidad</h4>
+                <div class="matriz-relacion">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background-color: #e8f4f8;">
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;" colspan="2">Relación entre Factores de Calidad y Métricas de la Calidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="10">FACTORES DE CALIDAD</th>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="border: 1px solid #ddd; padding: 8px;" colspan="2"></th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="4">OPERACIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">TRANSICIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">REVISIÓN</th>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">MÉTRICAS</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">DESCRIPCIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Corrección</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Confiabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Usabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Integridad o Seguridad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Portabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Reusabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Interoperabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Facilidad Mantenimiento</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Flexibilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Facilidad de Prueba</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Compleción de las funciones</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado en que se pudieron implementar las funciones requeridas.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Complejidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Complejidad del sistema</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Concisión</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Efectividad del recurso</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Consistencia</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Diseño uniforme del programa empleando técnicas de documentación.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Eficiencia de ejecución</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento en tiempo de ejecución</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Estandarización de datos y estructuras</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Manejo de tipos de datos y estructuras uniformes a lo largo del programa</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Exactitud de cálculo y de control</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Precisión obtenida en los cálculos</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Independencia del software</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado de independencia del software en relación al sistema operativo, y otras limitaciones del entorno.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Modularidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Independencia funcional de los componentes.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Operatividad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Facilidad de operación</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Seguridad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Disponibilidad de elementos de protección del recurso y la información.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Simplicidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado de dificultad para entender el recurso</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                    </table>
                 </div>
 
                 <h4>Cuestionario de Evaluación</h4>
@@ -146,554 +347,318 @@
                             <td style="border: 1px solid #ddd; padding: 8px;">Compleción de las funciones</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Grado en que se pudieron implementar las funciones requeridas.</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Ofrece Rappi todas las funciones prometidas (pedidos, pagos, seguimiento)?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="completitud">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Complejidad</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Complejidad del sistema</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Es complejo de usar para usuarios nuevos?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="revision" data-metrica="complejidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Concisión</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Efectividad del recurso</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Utiliza eficientemente los recursos del dispositivo?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="concision">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Consistencia</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Diseño uniforme del programa empleando técnicas de documentación.</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Mantiene consistencia en el diseño y navegación?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="consistencia">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Eficiencia de ejecución</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento en tiempo de ejecución</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Es eficiente en tiempos de carga y respuesta?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="eficiencia">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Seguridad</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Disponibilidad de elementos de protección del recurso y la información.</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Protege adecuadamente los datos de los usuarios?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="seguridad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Simplicidad</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Grado de dificultad para entender el recurso</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Es fácil de entender y usar?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="simplicidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Independencia del software</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Grado de independencia del software en relación al sistema operativo.</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Funciona en diferentes plataformas y dispositivos?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="transicion" data-metrica="independencia">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Estandarización de datos</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Uso de estándares en el manejo de datos</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Utiliza estándares reconocidos para el manejo de datos?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="transicion" data-metrica="estandarizacion">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Exactitud de cálculo y control</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Precisión en cálculos y control de procesos</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Los cálculos y controles son precisos?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="exactitud">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">BUENO</td>
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ddd; padding: 8px;">Operatividad</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de operación efectiva del sistema</td>
                             <td style="border: 1px solid #ddd; padding: 8px;">¿Opera de manera efectiva en condiciones normales?</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-mccall" data-factor="operacion" data-metrica="operatividad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                <!-- Matriz de Consolidación Mejorada -->
-                <h4>Matriz de Consolidación: Métricas vs Factores</h4>
-                <div class="matriz-consolidacion">
-                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                        <thead>
-                            <tr style="background-color: #f8f9fa;">
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">MÉTRICA</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CORRECCIÓN</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CONFIABILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">USABILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">SEGURIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PORTABILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">REUSABILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">INTEROPERABILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">MANTENIMIENTO</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">FLEXIBILIDAD</th>
-                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PRUEBA</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Compleción de funciones</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="correccion" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="completitud" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-revision">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Complejidad</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="usabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="mantenimiento" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="flexibilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="complejidad" data-factor="prueba" checked></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Concisión</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="confiabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="concision" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Consistencia</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="usabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="consistencia" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Eficiencia de ejecución</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="confiabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="eficiencia" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-transicion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Estandarización de datos</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="portabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="reusabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="interoperabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="estandarizacion" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Exactitud de cálculo y control</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="correccion" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="confiabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="seguridad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="exactitud" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-transicion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Independencia del software</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="portabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="interoperabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="independencia" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-revision">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Modularidad</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="reusabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="mantenimiento" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="flexibilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="modularidad" data-factor="prueba" checked></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Operatividad</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="correccion" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="confiabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="usabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="operatividad" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Seguridad</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="usabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="seguridad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="mantenimiento"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="flexibilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="seguridad" data-factor="prueba"></td>
-                            </tr>
-                            <tr class="metrica-operacion">
-                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Simplicidad</td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="correccion"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="confiabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="usabilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="seguridad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="portabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="reusabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="interoperabilidad"></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="mantenimiento" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="flexibilidad" checked></td>
-                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"><input type="checkbox" class="checkbox-metrica" data-metrica="simplicidad" data-factor="prueba" checked></td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <!-- Botones de acción -->
-                <div class="acciones-evaluacion">
-                    <button class="btn-guardar" onclick="guardarEvaluacion()">💾 Guardar Evaluación</button>
-                    <button class="btn-cargar" onclick="cargarEvaluacion()">📂 Cargar Evaluación</button>
-                    <button class="btn-limpiar" onclick="limpiarEvaluacion()">🗑️ Limpiar Todo</button>
-                </div>
-
-                <!-- Gráfico de resultados -->
-                <h4>Resultado Final</h4>
-                <div class="grafico-resultados">
-                    <div class="progreso-circular" data-porcentaje="0" id="grafico-progreso">
-                        0%
-                    </div>
-                    <div style="margin-left: 2rem;">
-                        <h5>Interpretación del Resultado</h5>
-                        <p id="interpretacion-resultado">Complete la evaluación para ver los resultados.</p>
-                        <div style="margin-top: 1rem;">
-                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                                <div style="width: 20px; height: 20px; background-color: #fd7e14; margin-right: 10px; border-radius: 3px;"></div>
-                                <span>Operación (40%)</span>
-                            </div>
-                            <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
-                                <div style="width: 20px; height: 20px; background-color: #0d6efd; margin-right: 10px; border-radius: 3px;"></div>
-                                <span>Transición (30%)</span>
-                            </div>
-                            <div style="display: flex; align-items: center;">
-                                <div style="width: 20px; height: 20px; background-color: #ffc107; margin-right: 10px; border-radius: 3px;"></div>
-                                <span>Revisión (30%)</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <h4>Consolidación de Puntajes</h4>
-                <div class="table-container">
-                    <table class="consolidacion-table" style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                    <thead>
-                        <tr style="background-color: #e8f4f8;">
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">CAPACIDAD</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">FACTOR</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="10">MÉTRICAS</th>
-                        </tr>
-                        <tr style="background-color: #e8f4f8;">
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Compleción</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Complejidad</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Concisión</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Consistencia</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Eficiencia</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Seguridad</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Simplicidad</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Independencia</th>
-                            <th style="border: 1px solid #ddd; padding: 4px; font-size: 0.8em;">Modularidad</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PROMEDIO</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">OPERACIÓN</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">40</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Corrección</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-completitud">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-concision">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-consistencia">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-eficiencia">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-seguridad">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-simplicidad">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-correccion">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Confiabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-completitud-conf">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-confiabilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Usabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-consistencia-usab">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-simplicidad-usab">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-usabilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Integridad o Seguridad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-seguridad-int">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-integridad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">TRANSICIÓN</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">30</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Portabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-independencia-port">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-portabilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Reusabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-reusabilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Interoperabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-interoperabilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">REVISIÓN</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">30</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Facilidad Mantenimiento</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-complejidad-mant">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="mccall-modularidad-mant">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-mantenimiento">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Flexibilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-flexibilidad">0</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Facilidad de Prueba</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="mccall-prueba">0</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">EXCELENTE</td>
                         </tr>
                     </tbody>
                 </table>
+                
+
+                <!-- Informe estático: acciones eliminadas -->
+
+                <!-- Informe estático: gráfico eliminado -->
+
+            <h4>Consolidación de Puntajes</h4>
+               <div class="matriz-relacion">
+                    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+                        <thead>
+                            <tr style="background-color: #e8f4f8;">
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;" colspan="2">Relación entre Factores de Calidad y Métricas de la Calidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="10">FACTORES DE CALIDAD</th>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="border: 1px solid #ddd; padding: 8px;" colspan="2"></th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="4">OPERACIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">TRANSICIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">REVISIÓN</th>
+                            </tr>
+                            <tr style="background-color: #f8f9fa;">
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">MÉTRICAS</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">DESCRIPCIÓN</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Corrección</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Confiabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Usabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Integridad o Seguridad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Portabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Reusabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Interoperabilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Facilidad Mantenimiento</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Flexibilidad</th>
+                                <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">Facilidad de Prueba</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Compleción de las funciones</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado en que se pudieron implementar las funciones requeridas.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Complejidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Complejidad del sistema</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Concisión</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Efectividad del recurso</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Consistencia</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Diseño uniforme del programa empleando técnicas de documentación.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Eficiencia de ejecución</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Rendimiento en tiempo de ejecución</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Estandarización de datos y estructuras</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Manejo de tipos de datos y estructuras uniformes a lo largo del programa</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Exactitud de cálculo y de control</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Precisión obtenida en los cálculos</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Independencia del software</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado de independencia del software en relación al sistema operativo, y otras limitaciones del entorno.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Modularidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Independencia funcional de los componentes.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Operatividad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Facilidad de operación</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Seguridad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Disponibilidad de elementos de protección del recurso y la información.</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">Simplicidad</td>
+                                <td style="border: 1px solid #ddd; padding: 8px;">Grado de dificultad para entender el recurso</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            </tr>
+                            <tr style="background-color: #f0f8ff;">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;" colspan="2">PUNTAJE PROMEDIO DE CADA FACTOR</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.8</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.6</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.8</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.5</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.5</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">3.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">4.0</td>
+                            </tr>
+                            <tr style="background-color: #f0f8ff;">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;" colspan="2">PUNTAJE ESCALA DE CADA FACTOR</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">9.5</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">8.3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">9.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">9.5</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">8.8</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10.0</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">8.8</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">7.5</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10.0</td>
+                            </tr>
+                            <tr style="background-color: #e8f4f8;">
+                                <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;" colspan="2">PROMEDIO OBTENIDO POR CAPACIDAD</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="4">9.3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">9.3</td>
+                                <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" colspan="3">8.3</td>
+                            </tr>
+                    </table>
                 </div>
             </article>
 
@@ -1450,6 +1415,6 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Informe estático: sin scripts -->
 </body>
 </html>
