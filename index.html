@@ -749,268 +749,100 @@
                 <h3>Plantilla Boehm</h3>
                 <p>Presentado por Barry Boehm en 1978, introduce características de alto nivel, características de nivel intermedio y características primitivas.</p>
 
-                <h4>Descripción de las características primitivas y cuestionario</h4>
+                <h4>Características del Modelo Boehm</h4>
                 <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
                     <thead>
                         <tr style="background-color: #f2f2f2;">
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">CARACTERÍSTICAS</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">PREGUNTAS</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE ESPERADO</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE OBTENIDO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CARACTERÍSTICAS DE ALTO NIVEL</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CARACTERÍSTICAS DE NIVEL INTERMEDIO</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">CARACTERÍSTICAS PRIMITIVAS</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;">PUNTAJE</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD GENERAL - PORTABILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Independencia de Dispositivos</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="2">UTILIDAD GENERAL</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">10</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">PORTABILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Independencia de Dispositivos</td>
                             <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="alto" data-caracteristica="portabilidad" data-primitiva="independencia">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Auto-contención</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Auto-contención</td>
                             <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="alto" data-caracteristica="portabilidad" data-primitiva="autocontencion">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - FIABILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Precisión</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">40</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="precision">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="10">UTILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="10">70</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="4">Fiabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Precisión</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="4">40</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Completitud</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="completitud">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Completitud</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Robustez</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="robustez">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Robustez</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Consistencia</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="fiabilidad" data-primitiva="consistencia">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Consistencia</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - EFICIENCIA</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Responsabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">15</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="responsabilidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">Eficiencia</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Responsabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="3">15</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Eficiencia de dispositivos</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="eficiencia-dispositivos">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Eficiencia de dispositivos</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Accesibilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="eficiencia" data-primitiva="accesibilidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Accesibilidad</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD - INTERACTIVIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Robustez</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">15</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="robustez-int">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="3">Interactividad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Robustez</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="3">15</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Accesibilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="accesibilidad-int">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Accesibilidad</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Capacidad de comunicación</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="interactividad" data-primitiva="comunicacion">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Capacidad de comunicación</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - FACILIDAD DE PRUEBA</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Auto descripción</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-prueba" data-primitiva="auto-descripcion">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="6">MANTENIBILIDAD</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="6">20</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="2">Facilidad de Prueba</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Auto descripción</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">5</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Estructuración</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-prueba" data-primitiva="estructuracion-prueba">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Estructuración</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - FACILIDAD DE ENTENDIMIENTO</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Concisión</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-entendimiento" data-primitiva="concision">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="2">Facilidad de Entendimiento</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Concisión</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">10</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Legibilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="facilidad-entendimiento" data-primitiva="legibilidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Legibilidad</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">MANTENIBILIDAD - MODIFICABILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Estructuración</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">5</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="modificabilidad" data-primitiva="estructuracion-mod">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" rowspan="2">Modificabilidad</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Estructuración</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">5</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px;">Escalabilidad</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;"></td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">
-                                <select class="puntaje-boehm" data-nivel="intermedio" data-caracteristica="modificabilidad" data-primitiva="escalabilidad">
-                                    <option value="">--</option>
-                                    <option value="1">1</option>
-                                    <option value="2">2</option>
-                                    <option value="3">3</option>
-                                    <option value="4">4</option>
-                                </select>
-                            </td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Escalabilidad</td>
+                        </tr>
+                        <tr style="background-color: #e8f4f8;">
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">Puntaje Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">100</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;"></td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;">100</td>
                         </tr>
                     </tbody>
                 </table>
