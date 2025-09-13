@@ -847,52 +847,522 @@
                     </tbody>
                 </table>
 
+                <h4>Descripción de las características primitivas y cuestionario</h4>
+                <table border="1" cellspacing="0" cellpadding="5" style="border-collapse: collapse; text-align: center; width: 100%;">
+                <thead>
+                    <tr style="background-color: #f2f2f2;">
+                    <th colspan="3">CARACTERÍSTICAS</th>
+                    <th rowspan="2">PREGUNTAS</th>
+                    <th rowspan="2">PUNTAJE<br>ESPERADO</th>
+                    <th rowspan="2">PUNTAJE<br>OBTENIDO</th>
+                    </tr>
+                    <tr style="background-color: #f2f2f2;">
+                    <th>ALTO NIVEL</th>
+                    <th>NIVEL INTERMEDIO</th>
+                    <th>PRIMITIVAS</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- UTILIDAD GENERAL -->
+                    <tr style="background-color: #fde9d9;">
+                    <td rowspan="2">UTILIDAD GENERAL</td>
+                    <td rowspan="2">PORTABILIDAD</td>
+                    <td>Independencia de Dispositivos</td>
+                    <td>¿El RED se puede ejecutar en cualquier dispositivo?</td>
+                    <td>Excelente</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr style="background-color: #fde9d9;">
+                    <td>Auto-contención</td>
+                    <td>¿El RED puede utilizarse offline?</td>
+                    <td>Bueno</td>
+                    <td>Malo</td>
+                    </tr>
+
+                    <!-- UTILIDAD -->
+                    <tr>
+                    <td rowspan="10">UTILIDAD</td>
+                    <td rowspan="4">Fiabilidad</td>
+                    <td>Precisión</td>
+                    <td>¿Los resultados obtenidos en el proceso son correctos?</td>
+                    <td>Excelente</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td>Completitud</td>
+                    <td>¿Aborda el desarrollo completo de la temática de aprendizaje?</td>
+                    <td>Excelente</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td>Robustez</td>
+                    <td>¿Cumple con los DBA?</td>
+                    <td>Bueno</td>
+                    <td>Regular</td>
+                    </tr>
+                    <tr>
+                    <td>Consistencia</td>
+                    <td>¿Es ajustable al currículo?</td>
+                    <td>Bueno</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Eficiencia</td>
+                    <td>Responsabilidad</td>
+                    <td>¿Se realiza un seguimiento del aprendizaje?</td>
+                    <td>Excelente</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr>
+                    <td>Eficiencia de dispositivos</td>
+                    <td>¿Permite ser ejecutado en cualquier dispositivo y/o navegador?</td>
+                    <td>Excelente</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td>¿Presenta facilidad de acceso?</td>
+                    <td>Excelente</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Interactividad</td>
+                    <td>Robustez</td>
+                    <td>¿Posee una Interfaz amigable?</td>
+                    <td>Bueno</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td>¿Permite navegación a estudiantes con limitaciones de accesibilidad?</td>
+                    <td>Bueno</td>
+                    <td>Regular</td>
+                    </tr>
+                    <tr>
+                    <td>Capacidad de comunicación</td>
+                    <td>¿Es interactivo con el usuario?</td>
+                    <td>Bueno</td>
+                    <td>Excelente</td>
+                    </tr>
+
+                    <!-- MANTENIBILIDAD -->
+                    <tr>
+                    <td rowspan="6">MANTENIBILIDAD</td>
+                    <td rowspan="2">Facilidad de Prueba</td>
+                    <td>Auto descripción</td>
+                    <td>¿Presenta guías de uso?</td>
+                    <td>Bueno</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr>
+                    <td>Estructuración</td>
+                    <td>¿Define organización por módulos?</td>
+                    <td>Bueno</td>
+                    <td>Excelente</td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Facilidad de Entendimiento</td>
+                    <td>Concisión</td>
+                    <td>¿Facilita la apropiación y ajuste del aprendizaje?</td>
+                    <td>Excelente</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td>Legibilidad</td>
+                    <td>¿Tipografías legibles y ajustables?</td>
+                    <td>Excelente</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Modificabilidad</td>
+                    <td>Estructuración</td>
+                    <td>¿Permite la facilidad de navegación entre módulos?</td>
+                    <td>Bueno</td>
+                    <td>Bueno</td>
+                    </tr>
+                    <tr>
+                    <td>Escalabilidad</td>
+                    <td>¿Es ajustable en su escala de presentación?</td>
+                    <td>Bueno</td>
+                    <td>Excelente</td>
+                    </tr>
+                </tbody>
+                </table>
+
                 <h4>Puntuación Obtenida</h4>
-                <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-                    <thead>
-                        <tr style="background-color: #e8f4f8;">
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">CARACTERÍSTICAS</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE ESPERADO</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE OBTENIDO</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PROMEDIO NIVEL</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PUNTAJE NIVEL</th>
-                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center;" rowspan="2">PROMEDIO TOTAL</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px; font-weight: bold;">UTILIDAD GENERAL</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">70</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-general">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">PORTABILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">10</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad-promedio">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-portabilidad-puntaje">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">UTILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">70</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-promedio">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-utilidad-puntaje">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">-</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ddd; padding: 8px;">MANTENIBILIDAD</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">20</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad-promedio">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;" id="boehm-mantenibilidad-puntaje">0</td>
-                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center; font-weight: bold;" id="boehm-total">0</td>
-                        </tr>
-                    </tbody>
+                <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center; width: 100%;">
+                <thead>
+                    <tr>
+                    <th colspan="9">Puntuación Obtenida</th>
+                    </tr>
+                    <tr>
+                    <th colspan="3">CARACTERÍSTICAS</th>
+                    <th>PUNTAJE ESPERADO</th>
+                    <th>PUNTAJE OBTENIDO</th>
+                    <th>PROMEDIO NIVEL</th>
+                    <th>PUNTAJE NIVEL</th>
+                    <th>PROMEDIO TOTAL</th>
+                    </tr>
+                    <tr>
+                    <th>ALTO NIVEL</th>
+                    <th>NIVEL INTERMEDIO</th>
+                    <th>PRIMITIVAS</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- PORTABILIDAD -->
+                    <tr>
+                    <td rowspan="2">PORTABILIDAD</td>
+                    <td rowspan="2"></td>
+                    <td>Independencia de Dispositivos</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Auto-contención</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+
+                    <!-- UTILIDAD -->
+                    <tr>
+                    <td rowspan="10">UTILIDAD</td>
+                    <td rowspan="4">Fiabilidad</td>
+                    <td>Precisión</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Completitud</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Robustez</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Consistencia</td>
+                    <td>10</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Eficiencia</td>
+                    <td>Responsabilidad</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Eficiencia de dispositivos</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Interactividad</td>
+                    <td>Robustez</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Capacidad de comunicación</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+
+                    <!-- MANTENIBILIDAD -->
+                    <tr>
+                    <td rowspan="6">MANTENIBILIDAD</td>
+                    <td rowspan="2">Facilidad de Prueba</td>
+                    <td>Auto descripción</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Estructuración</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Facilidad de Entendimiento</td>
+                    <td>Concisión</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Legibilidad</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Modificabilidad</td>
+                    <td>Estructuración</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Escalabilidad</td>
+                    <td>5</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                </tbody>
+                </table>
+
+                <h4>Resultados de la evaluación</h4>
+                <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; text-align: center; width: 100%;">
+                <thead>
+                    <tr>
+                    <th colspan="9">Resultados de la evaluación</th>
+                    </tr>
+                    <tr>
+                    <th colspan="3">CARACTERÍSTICAS</th>
+                    <th>PUNTAJE OBTENIDO</th>
+                    <th>PUNTAJE ESCALA</th>
+                    <th>TOTAL NIVEL</th>
+                    <th>PUNTAJE NIVEL</th>
+                    <th>TOTAL EVALUACIÓN</th>
+                    </tr>
+                    <tr>
+                    <th>ALTO NIVEL</th>
+                    <th>NIVEL INTERMEDIO</th>
+                    <th>PRIMITIVAS</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- PORTABILIDAD -->
+                    <tr>
+                    <td rowspan="2">PORTABILIDAD</td>
+                    <td rowspan="2"></td>
+                    <td>Independencia de Dispositivos</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Auto-contención</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+
+                    <!-- UTILIDAD -->
+                    <tr>
+                    <td rowspan="10">UTILIDAD</td>
+                    <td rowspan="4">Fiabilidad</td>
+                    <td>Precisión</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Completitud</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Robustez</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Consistencia</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Eficiencia</td>
+                    <td>Responsabilidad</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Eficiencia de dispositivos</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="3">Interactividad</td>
+                    <td>Robustez</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Accesibilidad</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Capacidad de comunicación</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+
+                    <!-- MANTENIBILIDAD -->
+                    <tr>
+                    <td rowspan="6">MANTENIBILIDAD</td>
+                    <td rowspan="2">Facilidad de Prueba</td>
+                    <td>Auto descripción</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Estructuración</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Facilidad de Entendimiento</td>
+                    <td>Concisión</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Legibilidad</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td rowspan="2">Modificabilidad</td>
+                    <td>Estructuración</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                    <tr>
+                    <td>Escalabilidad</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    </tr>
+                </tbody>
                 </table>
             </article>
 
