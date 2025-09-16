@@ -103,6 +103,47 @@ section h3 {
     padding-left: 1rem;
 }
 
+#referencias {
+    overflow-x: hidden;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#referencias ol {
+    padding-left: 2rem;
+    margin-right: 0;
+}
+
+#referencias li {
+    margin-bottom: 1.5rem;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+#referencias a {
+    color: #3498db;
+    text-decoration: underline;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    hyphens: auto;
+}
+
+#referencias a[href] {
+    white-space: normal;
+    word-break: break-all;
+}
+
+#referencias p {
+    margin-top: 0.5rem;
+    font-style: italic;
+    word-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
 article {
     margin-bottom: 2rem;
 }
@@ -416,6 +457,17 @@ table tr:hover td {
 html, body {
     overflow-x: hidden;
     width: 100%;
+    max-width: 100%;
+}
+
+main {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+section {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 /* Modo informe estático: desactivar interactividad visible */
